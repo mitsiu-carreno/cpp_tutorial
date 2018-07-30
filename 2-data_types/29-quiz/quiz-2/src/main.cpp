@@ -9,13 +9,18 @@ double getTowerHeight(){
 }
 
 double calcHeight(double totalHeight, int secondsElapsed){
-    //myConstants::gravity
-    return 9.0;
+    double tempHeight = totalHeight - ( myConstants::gravity * secondsElapsed * secondsElapsed)/2;
+    return tempHeight;
 }
 
 void printResult(double totalHeight, int secondsElapsed){
     double tempHeight = calcHeight(totalHeight, secondsElapsed);
-    std::cout << "At "<< secondsElapsed << " seconds, the ball is at height: " << tempHeight << " meters.";
+    if(tempHeight > 0){
+        std::cout << "At "<< secondsElapsed << " seconds, the ball is at height: " << tempHeight << " meters." << std::endl;
+    }else{
+        std::cout << "At "<< secondsElapsed << " seconds, the ball is on the ground" << std::endl;
+    }
+    
 }
 
 int main(){
@@ -25,5 +30,8 @@ int main(){
     printResult(totalHeight, 0);
     printResult(totalHeight, 1);
     printResult(totalHeight, 2);
+    printResult(totalHeight, 3);
+    printResult(totalHeight, 4);
+    printResult(totalHeight, 5);
     return 0;
 }
