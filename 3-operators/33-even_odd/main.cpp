@@ -17,12 +17,16 @@ int main(){
     std::cout << "Ingresa un número entero: ";
     int input;
     std::cin >> input;
-
+    /*
     if(isEven(input)){
         std::cout << "El número " << input << " es par";
     }else{
         std::cout << "El número " << input << " es impar";
     }
+    */
+
+    // Refactoring
+    std::cout << "El número " << input << ((isEven(input))? " es par" : " es impar") << std::endl;
 
     return 0;
 }
