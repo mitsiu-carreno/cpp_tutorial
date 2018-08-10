@@ -11,7 +11,7 @@ int main(){
 
   std::cout << "Number:\t" << input << " =\t" << bitNum << "\n\n";
   input &= lowMask;
-
+  std::cout << "input &= lowMask (lowMask = 0000 0000 0000 1111)" << "\n";
   std::cout << "The 4 low bits have value =\t" << std::bitset<16>(input) << " = " << input << "\t"; 
 
   return 0;
