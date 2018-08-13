@@ -12,7 +12,8 @@ int main(){
   std::cout << "Ingresa un color de 32-bits en formato hexadecimal (FF7F3300): ";
   std::cin >> std::hex >> pixel;
 
-  std::cout << "Tu color es: " << std::hex << pixel  << "\n"; 
+  //If we print the hex the whole program crash for some reason :/ WTF!
+  //std::cout << "Tu color es: " << std::hex << pixel  << "\n"; 
   std::cout << "En número decimal es: " << pixel << "\n";
   std::cout << "Tu color en binario es: " << std::bitset<32>(pixel) << "\n";
 
