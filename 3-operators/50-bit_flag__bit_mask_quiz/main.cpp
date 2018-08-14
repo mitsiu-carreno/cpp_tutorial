@@ -31,9 +31,14 @@ int main(){
     myArticleFlags &= ~option_favorited;
     std::cout << std::bitset<8>(myArticleFlags) << "\n";
 
+    std::cout << "Toggle shared:\n";
+    myArticleFlags ^=option_shared;
     std::cout << std::bitset<8>(myArticleFlags) << "\n";
+
+    std::cout << "Toggle shared again:\n";
+    myArticleFlags ^=option_shared;
     std::cout << std::bitset<8>(myArticleFlags) << "\n";
-    std::cout << std::bitset<8>(myArticleFlags) << "\n";
+    //std::cout << std::bitset<8>(myArticleFlags) << "\n";
 
     return 0;
 }
