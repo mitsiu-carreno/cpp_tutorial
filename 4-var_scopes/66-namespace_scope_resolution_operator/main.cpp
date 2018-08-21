@@ -1,6 +1,6 @@
 #include <iostream>
-#include "goo.cpp"
-#include "foo.cpp"
+#include "goo.h"
+#include "foo.h"
 
 int main(){
 	
