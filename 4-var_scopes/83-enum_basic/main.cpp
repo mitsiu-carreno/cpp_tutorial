@@ -33,5 +33,9 @@ int main(){
   std::cout << "Printing paint assiged to COLOR_RED enumerator:\t" << paint << "\n";
   std::cout << "Printing house assigned to COLOR_BLUE enumerator:\t" << house << "\n";
 
+	int myGF = PEOPLE_KAR;
+	std::cout << "Variable int myGF es: " << myGF << " <3\n";
+	std::cout << "Enum variable: " << PEOPLE_PABL << "\n";
+
   return 0;
 }
