@@ -26,7 +26,7 @@ void printEarn(Ad ad){
 	std::cout << "Percentage of ads clicked: " << ad.percentageClicked << "\n";
 	std::cout << "Average earn by ad clicked: " << ad.averageEarnPerClick << "\n";
 
-	std::cout << 	"Today you've made: " << ad.shown * ad.percentageClicked * ad.averageEarnPerClick << "\n";
+	std::cout << 	"Today you've made: " << ad.shown * ad.percentageClicked / 100 * ad.averageEarnPerClick << "\n";
 }
 
 int main(){
