@@ -16,11 +16,9 @@ struct Monster{
 };
 
 std::string getMonsterType(MonsterType type){
-  std::cout << static_cast<int>(type);
   
-  MonsterType newType = MonsterType::dragon;
-
-  switch(newType){
+	// We need C++17 for this code to work (g++ -std=c++1z -o main main.cpp)
+  switch(type){
     case MonsterType::ogre:
       return "Orge";
       break;
