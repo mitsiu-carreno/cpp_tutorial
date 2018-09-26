@@ -39,7 +39,15 @@ void calculate(int x, int y , char op){
 		case 'c':
 			std::cout << x << " * " << y << " = " << (x*y) << std::endl;
 			break;
-		
+	
+    case 'd':
+      std::cout << x << " / " << y << " = " << ( static_cast<double>(x)/y ) << std::endl;
+      break;
+
+    case 'e':
+      std::cout << x << " % " << y << " = " << (x%y) << std::endl;
+      break;
+
 		default:
 			std::cout << "Ha ocurrido un error inesperado :/";
 			std::cout << "OP VALUE: " << op << std::endl;
