@@ -28,18 +28,40 @@ int main(){
 
   std::cout << "\n---Quiz 3---\n";
 
-  count = 5;
-  while(count > 0){
+  count = 1;
+  while(count <= 5){
     int temp = 5;
     while(temp > 0){
-      if(temp )
+      if(temp <= count)
+				std::cout << temp << " ";
+			else
+				std::cout << "  ";
         
       --temp;
     }
     std::cout << std::endl;
 
-    --count;
+    ++count;
   }
+
+
+	std::cout << "\n---Quiz 4---\n";
+
+	count = 1;
+	while(count <= 5){
+		int temp = 5;
+		while(temp > 0){
+			if(temp <= count)
+				std::cout << temp << " ";
+			else
+				std::cout << "X ";
+			--temp;
+		}
+
+		std::cout << std::endl;
+		++count;
+	}
+
 
   return 0;
 }
