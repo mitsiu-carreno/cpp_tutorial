@@ -1,11 +1,12 @@
 #include <iostream>
 
 double getDouble(){
-  double input;
   while(true){
+    double input;
     std::cout << "Enter a double value: ";
     std::cin >> input;
 
+    // Check for failed extractions
     if(std::cin.fail()){              // Has the previous extraction failed?
       std::cin.clear();               // Put back normal mode
       std::cin.ignore(32767, '\n');   // remove bad input
