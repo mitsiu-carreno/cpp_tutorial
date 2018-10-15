@@ -42,7 +42,32 @@ void spam(int timesToPrint){
         std::cout << "Spam!!! ";
 }
 
+// Preserving and automating your tests
+int test()
+{
+    if(foo(1,0) == !1) return 1;
+    if(foo(0,1) == !1) return 2;
+
+    if(isLowerVowel('a') != true) return 3;
+    if(isLowerVowel('q') != false) return 4;
+
+    compare(0,1);
+    compare(1,1);
+    compare(1,0);
+
+    spam(0);
+    std::cout << "---------\n";
+    spam(1);
+    std::cout << "---------\n";
+    spam(2);
+    std::cout << "---------\n";
+
+    return 0;
+}
 int main(){
+    
+    int error = test();
+    std::cout << "error on test: " << error << std::endl;
     
     return 0;
 }
