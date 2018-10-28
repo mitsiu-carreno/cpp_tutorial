@@ -79,5 +79,35 @@ int main()
     int array[length2];  NOT OK
     */
 
+    // Initializer list
+    int prime1[5] = {0,1,2,3,4};
+    std::cout << "Prime1[0] = " << prime1[0] << "\n";
+    std::cout << "Prime1[1] = " << prime1[1] << "\n";
+    std::cout << "Prime1[2] = " << prime1[2] << "\n";
+    std::cout << "Prime1[3] = " << prime1[3] << "\n";
+    std::cout << "Prime1[4] = " << prime1[4] << "\n\n";
+
+    // zero initialization
+    int prime2[5] = {0,1,2};
+    std::cout << "Prime2[0] = "<< prime2[0] << "\n";
+    std::cout << "Prime2[1] = "<< prime2[1] << "\n";
+    std::cout << "Prime2[2] = "<< prime2[2] << "\n";
+    std::cout << "Prime2[3] = "<< prime2[3] << "\n";
+    std::cout << "Prime2[4] = "<< prime2[4] << "\n\n";
+
+    // omited length
+
+    int values[] = {1,2,3,4,5,6,7,8,9,10};
+    std::cout << "values[0] = "<< values[0] << "\n";
+    std::cout << "values[1] = "<< values[1] << "\n";
+    std::cout << "values[2] = "<< values[2] << "\n";
+    std::cout << "values[3] = "<< values[3] << "\n";
+    std::cout << "values[4] = "<< values[4] << "\n";
+    std::cout << "values[5] = "<< values[5] << "\n";
+    std::cout << "values[6] = "<< values[6] << "\n";
+    std::cout << "values[7] = "<< values[7] << "\n";
+    std::cout << "values[8] = "<< values[8] << "\n";
+    std::cout << "values[9] = "<< values[9] << "\n";
+    
     return 0;
 }
