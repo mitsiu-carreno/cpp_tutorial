@@ -41,5 +41,18 @@ int main()
   int pos = askPosition();
   std::cout << "arr[" << pos << "] = " << arr[pos] << "\n\n";
 
+  int maxValue = 0;
+  int maxIndex = 0;
+  for(int count = 0; count < numElements; ++count)
+  {
+    if(arr[count] > maxValue)
+    {
+      maxValue = arr[count];
+      maxIndex = count;
+    }
+  }
+
+  std::cout << "The biggest element is: " << maxValue << " and is located at positon: " << maxIndex << std::endl;
+
   return 0;
 }
