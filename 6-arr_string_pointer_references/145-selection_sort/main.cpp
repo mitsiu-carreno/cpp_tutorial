@@ -1,18 +1,17 @@
 #include <iostream>
 #include <utility>
 
-int findMinIndex(int startPoint, int arr[])
+int findMinIndex(int startPoint, int arr[], int arrLength)
 {
-    int numElements = sizeof(arr) / sizeof(arr[0]);
     int minIndex = startPoint;
-    for(int count = startPoint; count < numElements; ++count)
+    for(int count = startPoint+1; count < arrLength; ++count)
     {
         if(arr[count] < arr[minIndex])
         {
             minIndex = count;
-
         }
     }
+    return minIndex;
 }
 
 void swapElements(int indexX, int indexY, int arr[])
@@ -20,10 +19,9 @@ void swapElements(int indexX, int indexY, int arr[])
     std::swap(arr[indexX], arr[indexY]);
 }
 
-void printArray(int arr[])
+void printArray(int arr[], int arrLength)
 {
-    int numElements = sizeof(arr) / sizeof(arr[0]);
-    for(int count=0; count < numElements; ++count)
+    for(int count=0; count < arrLength; ++count)
     {
         std::cout << "arr[" << count << "] = " << arr[count] << "\n";
     }
@@ -37,18 +35,18 @@ int main()
     std::cout << "3) Repeat steps 1 and 2 starting from next index\n";
 
     int arr[] = {30, 50, 20, 10, 40};
-    std::cout << "Print original array:\n";
-    printArray(arr);
-    
     int numElements = sizeof(arr) / sizeof(arr[0]);
 
-    for(int count = 0; count < numElements; ++count)
+    std::cout << "Print original array:\n";
+    printArray(arr, numElements);
+    
+    for(int count = 0; count < numElements-1; ++count)
     {
-        int minIndex = findMinIndex(count, arr);
+        int minIndex = findMinIndex(count, arr, numElements);
         swapElements(count, minIndex, arr);
     }
     
     std::cout << "Print ordered array:\n";
-    printArray(arr);
+    printArray(arr, numElements);
     return 0;
 }
