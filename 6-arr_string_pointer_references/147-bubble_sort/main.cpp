@@ -37,8 +37,6 @@ void bubbleOptimized(int array[], int length)
         std::swap(array[innerCount], array[innerCount+1]);
       }
     }
-    std::cout << "STEP--\n"; 
-    printArray(array, length);
     if(noSwap){
       std::cout << "Early termination on interation " << outerCount +1 << "\n";
       return;
