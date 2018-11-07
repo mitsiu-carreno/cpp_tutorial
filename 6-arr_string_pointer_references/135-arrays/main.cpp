@@ -108,6 +108,9 @@ int main()
     std::cout << "values[7] = "<< values[7] << "\n";
     std::cout << "values[8] = "<< values[8] << "\n";
     std::cout << "values[9] = "<< values[9] << "\n";
+
+    //CAREFUL NOT TO SEARCH OUT OF BOUND ELEMENTS
+    std::cout << "values[10] = "<< values[10] << " <- (this doesn't exists in array but no error is shown) \n";
     
     return 0;
 }
