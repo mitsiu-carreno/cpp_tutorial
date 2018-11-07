@@ -3,7 +3,7 @@
 
 int findMinIndex(int startPoint, int arr[], int arrLength)
 {
-    int minIndex = startPoint;
+    int minIndex = startPoint+1;
     for(int count = startPoint+1; count < arrLength; ++count)
     {
         if(arr[count] < arr[minIndex])
@@ -12,6 +12,19 @@ int findMinIndex(int startPoint, int arr[], int arrLength)
         }
     }
     return minIndex;
+}
+
+int findMaxIndex(int startPoint, int arr[], int arrLength)
+{
+    int maxIndex = startPoint+1;
+    for(int count = startPoint +1; count< arrLength; ++count)
+    {
+        if(arr[count] > arr[maxIndex])
+        {
+            maxIndex = count;
+        }
+    }
+    return maxIndex;
 }
 
 void swapElements(int indexX, int indexY, int arr[])
@@ -47,6 +60,15 @@ int main()
     }
     
     std::cout << "Print ordered array:\n";
+    printArray(arr, numElements);
+
+    for(int count = 0; count < numElements-1; ++count)
+    {
+        int maxIndex = findMaxIndex(count, arr, numElements);
+        swapElements(count, maxIndex, arr);
+    }
+
+    std::cout << "Reverse ordered array:\n";
     printArray(arr, numElements);
     return 0;
 }
