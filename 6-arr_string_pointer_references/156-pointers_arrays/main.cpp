@@ -1,11 +1,12 @@
 #include <iostream>
+#include <typeinfo>
 
 int main()
 {
   int arr[5] = {0,1,2,3,4};
 
 
-  std::cout << "The array has address:\t" << &arr << "\n";
+  std::cout << "The array (decayed to first elem) has address:\t" << &arr << "\n";
 
   // Print the value of variable arr
   std::cout << "The array value is:\t" << arr << "\n";
@@ -31,7 +32,12 @@ int main()
   int *ptr = arr;
 
   std::cout << *arr << "\n";
-  std::cout << *ptr << "\n";
+  std::cout << *ptr << "\n\n";
+
+  std::cout << "Trying to print the addresses: \n";
+  
+  int (*arrPtr)[5] = &arr;
+  std::cout << "Actual array address " << arrPtr << " type: " <<  typeid(arrPtr).name() << "\n";
 
   return 0;
 }
