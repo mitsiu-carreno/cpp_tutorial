@@ -24,6 +24,12 @@ void changeMoreArray(int arr[])
   arr[1] = 1;
 }
 
+void changePtr(int *arr)
+{
+  arr[0]=10;
+  arr[1]=11;
+}
+
 int main()
 {
   int arr[] = {3,6,7,8,2,7,3,7,3,2,5,8};
@@ -50,5 +56,9 @@ int main()
   std::cout << "The first element value is: " << arr[0] << "\n";
   std::cout << "The second element value is: " << arr[1] << "\n";
   
+  changePtr(arr);
+  std::cout << "The first element value is: " << arr[0] << "\n";
+  std::cout << "The second element value is: " << arr[1] << "\n";
+
   return 0;
 }
