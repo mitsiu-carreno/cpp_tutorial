@@ -28,10 +28,18 @@ int getInput()
 
 int main()
 {
-  int input;
-  input = getInput(); 
+  int length;
+  length = getInput(); 
 
-  std::cout << "Input is:" << input ; 
+  int *arr = new int[length]; // use array new. Length is NOT a constant
+
+  arr[0] = 5;   // set element 0 to 5
+
+  std::cout << arr[0] << std::endl;
+
+  delete[] arr;   // use array delete to deallocate array
+
+  arr = nullptr;
 
   return 0;
 }
