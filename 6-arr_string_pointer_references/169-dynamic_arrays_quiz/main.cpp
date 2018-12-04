@@ -29,20 +29,20 @@ int getLength()
 
 void selectionSort(std::string *myFriends, int numOfFriends)
 {
-    for(int outer = 0; outer < numOfFriends; ++outer){
+    for(int startIndex = 0; startIndex < numOfFriends; ++startIndex){
 
-        int nextSortedName = outer;
+        int smallestIndex = startIndex;
         //std::string firstSortedName = myFriends[0];
-        for(int inner = outer; inner < numOfFriends; ++inner)
+        for(int currentIndex = startIndex; currentIndex < numOfFriends; ++currentIndex)
         {
-            //std::cout << "Comparing " << myFriends[inner] << " & " << firstSortedName << "\n"; 
-            if(myFriends[inner] < myFriends[nextSortedName])
+            //std::cout << "Comparing " << myFriends[currentIndex] << " & " << firstSortedName << "\n"; 
+            if(myFriends[currentIndex] < myFriends[smallestIndex])
             {
-                nextSortedName = inner;    
+                smallestIndex = currentIndex;    
             }
         }
-        //myFriends[outer] = myFriends[nextSortedName];
-        std::swap(myFriends[outer], myFriends[nextSortedName]);
+        //myFriends[startIndex] = myFriends[smallestIndex];
+        std::swap(myFriends[startIndex], myFriends[smallestIndex]);
     }
 }
 
