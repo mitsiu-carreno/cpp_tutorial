@@ -10,7 +10,7 @@ extern const int g_z; // forward declaration for const global variable defined e
 // Initialized declaration
 int g_y(1);					// defines initialized global variable (external linkage)
 static int g_y(1);	// defines initialized static variable (internal linkage)
-const intg_y(1);		// defines initialized static variable (internal linkage)
+const int g_y(1);		// defines initialized static variable (internal linkage)
 
 // Initialized definition w/extern keyword
 extern int g_w(1);	// defines initialized global variable (external linkage, extern keyword is redundant in this case)
