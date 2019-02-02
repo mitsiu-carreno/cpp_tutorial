@@ -36,7 +36,7 @@ int main()
     const int *valPtr = &val;   // valPtr points to a const int
 
     int val2 = 6;
-    const int *valPtr2 = &val2; // okay, valPtr now points at some other const int
+    valPtr = &val2; // okay, valPtr now points at some other const int
 
     std::cout << "\n\n\nConstant pointers\n";
     std::cout << "We can also make pointer constant itself (Whose value can not be changed after initialization)\n";
