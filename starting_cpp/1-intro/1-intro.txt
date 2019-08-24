@@ -1,0 +1,21 @@
+Chapter 1
+
+Computer programming is both an art and a science
+
+*It is an art because every aspect of a program should be carefully designed 
+	-The logic flow of the instructions
+	-The mathematical procedures
+	-The appearance of the screens
+	-The way information is presented to the user
+	-The program`s "user-friendliness"
+	-Manuals and other forms of written documentation
+
+*There is also a scientific, or engineering side of programming, programs rarely work right the first time they are written
+	-A lot of testing
+	-Correction
+	-Redisign
+
+Both artistic and scientific nature of programming make writting computer software like desiging a car:
+Both cars and programs should be functional, efficient, powerful, easy to use and pleasing to look at.
+
+
