@@ -1,0 +1,47 @@
+What is a program?
+A computer program is a set of instructions that tells the computer how to solve a problem, or perform a task.
+Collectively, these instructions are called an "algorithm". An algorithm is a set of well-defined steps for performing a task or solving a problem. Note these steps are sequentially ordered. (Step 1 should be performed before step 2, and so forth).
+A computer's CPU can only process instructions that are written in "machine language". If you were to look at a machine language program, you would see a stream of "binary numbers". The binary numbers form machine language instructions, which the CPU interprets as commands.
+As you can imagine the process of encoding an algorithm in machine language is very tedious and difficult. 
+In addition, EACH DIFFERENT TYPE OF CPU HAS ITS OWN MACHINE LANGUAGE.
+
+Programming languages were invented to ease the task of programming. A program can be written in a programming language, which is much easier to understand than machine language. Programmers save their programs in text files, and then use special software to convert their programs to machine language.
+
+Example:
+// This program caluclates the user's pay
+#include <iostream>
+using namespace std;
+
+int main(){
+  double hours, rate, pay;
+
+  // Get the number of hours worked.
+  cout << "How many hours did you work? ";
+  cin >> hours;
+
+  // Get the hourly pay rate
+  cout << "How much do you get paid per hour? ";
+  cin >> rate;
+
+  // Calculate the pay
+  pay = hours * rate;
+
+  // Display the pay
+  cout << "You have earned $" << pay << endl;
+  return 0;
+}
+
+Programming Languages
+In a broad sense, there are two categories of programming languages: 
+-Low-level languages - Close to the level of the computer, which means it resembles the numeric machine language of the computer more than the natural language of humans
+-High-level languages - Closer to the level of human-readability than computer readability
+
+C++ has many low level features. C++ is based on the C language, which was invented for purposes such as writing  operating systems and compilers. Since C++ evolved from C, it carries all of C's low-level capabilities with it.
+
+
+Source Code, Object Code and Executable Code
+  When a C++ program is written, the statements written by the programmer are called SOURCE CODE, and the file they are saved in is called the SOURCE FILE.
+  After the SOURCE CODE is saved to a file, the process of translating it to MACHINE LANGUAGE can begin. 
+  During the first phase of this process, a program called the PREPROCESSOR reads the source code. The PREPROCESSOR seraches for special lines that begin with the # symbol. These lines contain commands that cause the PREPROCESSOR to modify the SOURCE CODE in some way.
+  During the next phase the COMPILER steps through the PREPROCESSED SOURCE CODE, translating each SOURCE CODE INSTRUCTION into a appropriate MACHINE LANGUAGE INSTRUCTION. This provess will cover any "syntax errors" that may be in the program. (Syntax errors are illegal uses of key words, operators, punctuation, and other language elements). If the program is free of syntax errors, the COMPILER stores the translated MACHINE LANGUAGE INSTRUCTIONS, which are called OBJECT CODE, in an OBJECT FILE.
+

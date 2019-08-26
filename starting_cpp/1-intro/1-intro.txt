@@ -3,56 +3,76 @@ Chapter 1
 Computer programming is both an art and a science
 
 *It is an art because every aspect of a program should be carefully designed 
-	-The logic flow of the instructions
-	-The mathematical procedures
-	-The appearance of the screens
-	-The way information is presented to the user
-	-The program`s "user-friendliness"
-	-Manuals and other forms of written documentation
+  -The logic flow of the instructions
+  -The mathematical procedures
+  -The appearance of the screens
+  -The way information is presented to the user
+  -The program`s "user-friendliness"
+  -Manuals and other forms of written documentation
 
 *There is also a scientific, or engineering side of programming, programs rarely work right the first time they are written
-	-A lot of testing
-	-Correction
-	-Redisign
+  -A lot of testing
+  -Correction
+  -Redisign
 
 Both artistic and scientific nature of programming make writting computer software like desiging a car:
 Both cars and programs should be functional, efficient, powerful, easy to use and pleasing to look at.
 
 Hardware - Refers to the physical components that a computer is made of.
-	-The central processing unit (CPU)
-	-Main memory
-	-Second storage devices
-	-Input devices
-	-Output devices
+  -The central processing unit (CPU)
+  -Main memory
+  -Second storage devices
+  -Input devices
+  -Output devices
 
-	*CPU
-		In the earliest computers, CPU's were huge devices made of electrical and mechanical components such as vacuum tubes and switches. Today CPU's are small chips known as microprocessors.
-		The CPU's job is to fetch instrucctions, follow the instructions, and produce some result. 
-		Internally the central processing unit consists of two parts.
-			-Control Unit
-			-Arithmetic and logic unit (ALU)
+  *CPU
+    In the earliest computers, CPU's were huge devices made of electrical and mechanical components such as vacuum tubes and switches. Today CPU's are small chips known as microprocessors.
+    The CPU's job is to fetch instrucctions, follow the instructions, and produce some result. 
+    Internally the central processing unit consists of two parts.
+      -Control Unit
+      -Arithmetic and logic unit (ALU)
 			
-			*Control Unit
-				Coordinates all the computer operations. It's responsible for determining where to get the next instruction and regulating the other major components of the computer with control signals. 
-			*Arithmetic and logic unit
-				Is designed to perform mathematical operations.
+      *Control Unit
+        Coordinates all the computer operations. It's responsible for determining where to get the next instruction and regulating the other major components of the computer with control signals. 
+      *Arithmetic and logic unit
+        Is designed to perform mathematical operations.
 
-			(Figure 1-5)
+      (Figure 1-5)
 
-		A program is a sequence of instrucctions stored in the computer's memory. When a computer is running a program, the CPU is engaged in a process known formally as the "fetch/decode/execute cycle" 
-			-Fetch: The CPU's control unit fetches, from main memory, the next instruction in the secuence of program instructions
-			-Decode: The instruction is encoded in the form of a number. The control unit decodes the instruction and generates an electronic signal
-			-Execute: The signal is routed to the appropiate component of the computer (such as the ALU, a disk drive, or some other device). The signal causes the component to perform an operation.
+    A program is a sequence of instrucctions stored in the computer's memory. When a computer is running a program, the CPU is engaged in a process known formally as the "fetch/decode/execute cycle" 
+      -Fetch: The CPU's control unit fetches, from main memory, the next instruction in the secuence of program instructions
+      -Decode: The instruction is encoded in the form of a number. The control unit decodes the instruction and generates an electronic signal
+      -Execute: The signal is routed to the appropiate component of the computer (such as the ALU, a disk drive, or some other device). The signal causes the component to perform an operation.
 
 	*Main memory
-		Is the computer's work area. This is where the computer stores a program while the program is running, as well as the data that the program is working with.
-		Main memory is commonly known as "random-access memory" or RAM. The CPU is able to quickly access data stored at any random location in RAM. 
-		RAM is usually a "volatile" type of memory that is used only for temporary storage while a program is running.
-		A computer's memory is divided into tiny storage locations known as bytes. One byte is enough memory to store only a letter of the alphabet or a small number. In order to do anything meaninful, a computer must have lots of bytes.
+    Is the computer's work area. This is where the computer stores a program while the program is running, as well as the data that the program is working with.
+    Main memory is commonly known as "random-access memory" or RAM. The CPU is able to quickly access data stored at any random location in RAM. 
+    RAM is usually a "volatile" type of memory that is used only for temporary storage while a program is running.
+    A computer's memory is divided into tiny storage locations known as bytes. One byte is enough memory to store only a letter of the alphabet or a small number. In order to do anything meaninful, a computer must have lots of bytes.
     Each byte is divided into eight smaller storage locations known as bits. 
     The term bit stands for "binary digit".
     In most computer systems, bits are tiny electrical components that can hold either a positive or a negative charge as a switch.
     Each byte is assigned a unique number known as an "address". The addresses are ordered from lowest to highest. 
 
   *Secondary storage
-      
+    Secondary storage is a type of memory that can hold data for long periods of time - even when there is no power to the computer. Frequently used programs are stored in secondary memory and loaded into main memory as needed.
+    The most common type of secondary storage device is the disk drive. A disk drive stores data by magnetically encoding it onto a circular disk. Other such as floppy disks, USB drives, CD, DVD can be used too.
+  
+  *Input devices
+    Input is any information the computer collects from the outside world. The device that collects the information and send it to the computer is called an "input device". Common input devices are the keyboard, mouse, scanner, digital camera, and microphone. (Disk drices, CD/DVD drives and USB drives can also be considered input devices because programs and information are retreived from them and loaded into computer memory).
+  
+  *Output devices
+    Output is any information the computer sends to the outside world, which is sent to an "output device" which formats and presents it. 
+    Common output devices are monitors, printers and speakers. (Disk drives, USB drives and CD/DVD recorders can also be considered output devices because the CPU sends them information to be saved)   
+
+Software - Everything that a computer does, from the time you turn the power swich on until you shut the system down, is under control of software.
+There are two general categories of software:
+  -System software
+  -Application software
+
+  *System software - The programs that control and manage the basic operations of a computer are generally refered to as "system software". System software typically includes the following types of programs:
+    -Operation Systems - An operating system is the most fundamental set of programs on a computer. The operating system controls the internal operations of the computer's hardware, manages all the devices connected to the computer, allows data to be saved to and retrieved from storage devices, and allows other programs to run on the computer
+    -Utility Programs - A "Utility program" performs a specialized task that enhances the computer's operaton or safeguards data. Examples of utility programs are virus scanners, file-compression programsm and data-backup programs.
+    -Software development tools - The software tools that programmers use to create, modify and test software are referred to as "software development tools". Compilers and integrated development enviroments are examples of programs that fall into this category.
+
+  *Application Software - Programs that make a computer useful for everyday tasks are known as "application software". These are the programs that people normally spend most of their time running on their computers. 
