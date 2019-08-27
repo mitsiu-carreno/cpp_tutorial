@@ -1,0 +1,55 @@
+Procedural and Object-Oriented programming
+  C++ is a language that can be used for two methods of writing computer programs: 
+  -Procedural programming 
+  -Object-oriented programming
+
+  *Procedural programming
+    The programmer constructs procedures (or functions, as they are called in C++). The procedures are collections of programming statements that perform a specific task. The procedures each contain their own variables and commonly share variables with other procedures.
+
+
+    ----------------------------
+    -       Program            -
+    - ************************ -
+    - *  PROCEDURE A         * -
+    - *    Variables         * -
+    - *    Programming       * -
+    - *  END OF PROCEDURE A  * -
+    - ************************ -
+    -                          -
+    - ************************ -
+    - *  PROCEDURE B         * -
+    - *    Variables         * -
+    - *    Programming       * -
+    - *  END OF PROCEDURE B  * -
+    - ************************ -
+    ----------------------------
+
+  * Object-oriented programming (OOP)
+    Is centered on the object. An object is a programming element that contains data and the procedures that operate on the data. It is a self-contained unit. The objects contain, within themselves, both information and the ability to manipulate the information. Operations are carried out on the information in an object by sending the object a "message". When an object receives a message instructing it to perform some operation, it carries out the instruction.
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    +                                         Program                                          +
+    +                                                                                          +
+    + ----------------------------  ----------------------------  ---------------------------- +
+    + -        Object A          -  -        Object B          -  -        Object C          - +
+    + -       Variables          -  -       Variables          -  -       Variables          - +
+    + - ************************ -  - ************************ -  - ************************ - +
+    + - *  Procedure A         * -  - *  Procedure A         * -  - *  Procedure A         * - +
+    + - *    Variables         * -  - *    Variables         * -  - *    Variables         * - +
+    + - *    Programming       * -  - *    Programming       * -  - *    Programming       * - +
+    + - *  END OF PROCEDURE A  * -  - *  END OF PROCEDURE A  * -  - *  END OF PROCEDURE A  * - +
+    + - ************************ -  - ************************ -  - ************************ - +
+    + -                          -  -                          -  -                          - +
+    + - ************************ -  - ************************ -  - ************************ - +
+    + - *  Procedure B         * -  - *  Procedure B         * -  - *  Procedure B         * - +
+    + - *    Variables         * -  - *    Variables         * -  - *    Variables         * - +
+    + - *    Programming       * -  - *    Programming       * -  - *    Programming       * - +
+    + - *  END OF PROCEDURE B  * -  - *  END OF PROCEDURE B  * -  - *  END OF PROCEDURE B  * - +
+    + - ************************ -  - ************************ -  - ************************ - +
+    + -                          -  -                          -  -                          - +
+    + ----------------------------  ----------------------------  ---------------------------- +
+    +                                                                                          +
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+

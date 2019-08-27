@@ -44,4 +44,65 @@ Source Code, Object Code and Executable Code
   After the SOURCE CODE is saved to a file, the process of translating it to MACHINE LANGUAGE can begin. 
   During the first phase of this process, a program called the PREPROCESSOR reads the source code. The PREPROCESSOR seraches for special lines that begin with the # symbol. These lines contain commands that cause the PREPROCESSOR to modify the SOURCE CODE in some way.
   During the next phase the COMPILER steps through the PREPROCESSED SOURCE CODE, translating each SOURCE CODE INSTRUCTION into a appropriate MACHINE LANGUAGE INSTRUCTION. This provess will cover any "syntax errors" that may be in the program. (Syntax errors are illegal uses of key words, operators, punctuation, and other language elements). If the program is free of syntax errors, the COMPILER stores the translated MACHINE LANGUAGE INSTRUCTIONS, which are called OBJECT CODE, in an OBJECT FILE.
+  Although an OBJECT FILE contains MACHINE LANGUAGE INSTRUCTIONS, it is not a complete program. C++ is conveniently EQUIPPED WITH A LIBRARY OF PREWRITTEN CODE FOR PERFORMING COMMON OPERATIONS OR SOMETIMES-DIFFICULT TASKS. IT ALSO PROVIDES ROUTINES FOR MATHEMATICAL FUNCTIONS. THIS COLLECTION OF CODE, CALLED THE "RUN-TIME LIBRARY" is extensive.
+  Programs almost always use part of it. When the compiler generates an OBJECT FILE, however, it does not include MACHINE CODE for any RUN-TIME LIBRARY routines the programer might have used.
+  During the last phase of the translation process, another program called the LINKER combines the OBJECT FILE with the necessary LIBRARY ROUTINES.
+  Once the LINKER has finished with this step, an EXECUTABLE FILE is create. The EXECUTABLE FILE contains MACHINE LANGUAGE instructions or EXECUTABLE CODE, and is ready to run on the computer 
+
+  On a Linux system, the following command causes the C++ program named "hello.cpp" to be preprocessed, compiled and linked. The executable code is stored in a file named "hello"
+
+    g++ -o hello hello.cpp
+
+  (Figure 1-8)
+
+  Source Code -> *Preprocessor -> Modified Source Code -> *Compiler -> Object Code -> *Linker -> Executable Code
+
+  Many development systems, particularly those on personal computers have INTEGRATED DEVELOPMENT ENVIRONMENTS (IDEs) which consists of a text editor, compiler, debugger, and other utilities integrated into a package with a single set of menus.
+
+What is a program made of?
+  All programming languages have a few things in common:
+  -Key words
+  -Programmer-defined Identifiers
+  -Operators
+  -Punctuation
+  -Syntax
+  -Statements
+  -Variables
+
+  *Key words
+  Words that have a special meaning. Key words may only be used for their intended purpose. Key words are also known as reserved words. These words are always written in lowercase.
+  
+  *Programmer-Defined Identifiers
+  Words or names defined by the programmer. They are symbolic names that refer to variables or programming routines
+
+  *Operators
+  Operators perform operations on one or more operands. An operand is usually a pice of data, like a number
+
+  *Punctuation
+  Punctuation characters that mark the beginning or ending of a statement, or separate items in a list.
+
+  *Syntax
+  Rules that must be followed when constructing a program. Syntax dictates how key words and operators may be used, and where punctuation symbols must appear  
+
+  *Statements
+  A statement is a complete instruction that causes the computer to perform some action. Statements can be a combination of key words, operators, and programmer-defined symbols. 
+
+  *Variables
+  A variable is a named storage location in the computer's memory for holding a piece of information. The information stored in variables may change while the program is running.
+  Variables are symbolic names that represent locations in the computer's random-access memory (RAM). When information is stored in a variable, it is actually stored in RAM. 
+  If it helps, think of a variable as a box that holds information and that box has a name (the variable name)
+ 
+Variable definitions
+  In prorgamming, there are two general types of data: 
+  -Numbers - Used to perform mathematical operations
+  -Characters - Used to print data on the screen or on paper
+
+  "Programmers often use the term "variable declaration" to mean the same thing as "variable definition". Strictly speaking, there is a difference between the two terms.
+  A definition statement always causes a variable to be created in memory. Some types of declaraton statements, however, do not cause a varaible to be created in memory."
+
+
+Input, Processing and Output
+The three primary activities of a program are gather input, performing some processing on the information gathered and producing output.
+
+
 
