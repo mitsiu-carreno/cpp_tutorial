@@ -1,0 +1,8 @@
+A simple C++ program
+
+#include <iostream>
+All lines that starts with "#" is called a PREPROCESSOR DIRECTIVE. The preprocessor reads your program before it is compiled and only executes those lines beginning with a # symbol
+Think of the preprocessor as a program that "set up" the source code for the compiler
+
+The #include directive causes the preprocessor to include 
+
