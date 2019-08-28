@@ -1,0 +1,32 @@
+Use the cout object to display information on the computer's screen
+The simplest type of screen output that a program can display is console output, which is merely plain text. 
+
+The world console is an old computer term. It comes from the days when a computer operator interacted with the system by typing on a terminal (which was known as the console).
+
+cout is classified as a STREAM OBJECT, which means it works with streams of data. To print a message on the screen, you send a stream of characters to cout
+
+  cout << "Programming is great fun!";
+
+Notice that the << operator is used to send the string "Programming is great fun!" to cout.
+When the << symbol is used this way, it is called the STREAM INSERTION OPERATOR. The item immediately to the right of the operator is sent to cout and then displayed on the screen
+
+  cout << "Programming is " << "great fun!";
+
+As you can see, the STREAM-INSERTION OPERATOR can be used to send more than one item to cout
+
+  cout << "Programming is" ;
+  cout << "great fun!";
+
+Although the output is broken up into two programming statements, this program will still display the message on a single line. Unless you specify otherwise, the information send to cout is displayed in a continuous stream. The layout of the actual output looks nothing like the arrangement of the strings in the source code.
+
+There are two ways to instruct cout to start a new line. The first is to send cout a STREAM MANIPULATOR called endl 
+
+  cout << "Programming is" << endl;
+  cout << "great fun!" << endl;
+
+Every time cout encounters an endl STREAM MANIPULATOR it advances the output to the beginning of the next line for subsequent printing. The manipulator can be inserted anywhere in the stream of characters sent to cout, outside the double quotes.
+
+  cout << "My pets are" << endl << "dog";
+  cout << endl << "cat " << " bird" << endl;
+
+Another way to cause cout to go to a new line is to insert an ESCAPE SEQUENCE
