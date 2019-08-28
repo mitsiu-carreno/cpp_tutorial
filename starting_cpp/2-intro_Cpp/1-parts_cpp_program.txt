@@ -1,8 +1,41 @@
 A simple C++ program
 
 #include <iostream>
-All lines that starts with "#" is called a PREPROCESSOR DIRECTIVE. The preprocessor reads your program before it is compiled and only executes those lines beginning with a # symbol
-Think of the preprocessor as a program that "set up" the source code for the compiler
+  All lines that starts with "#" is called a PREPROCESSOR DIRECTIVE. The preprocessor reads your program before it is compiled and only executes those lines beginning with a # symbol
+  Think of the preprocessor as a program that "set up" the source code for the compiler
 
-The #include directive causes the preprocessor to include 
+  The #include directive causes the preprocessor to include the contents of the another file that is to be included. The iostream file contains code that allows a C++ program to display output on the screen and read input from the keyboard.
+  The contents of the iostream file are included in the program at the point the #include statement appears.
+  The iostream file is called a HEADER FILE, so it should be included at the head, or top of the program.
 
+
+using namespace std;
+  Programs usually contain several items with unique names (variables, functions, objects) 
+  C++ uses namespaces to organize the names of program entities. The statement "using namespace std;" declares that the program will be accessing entities whose names are part of the namespace called std. (Yes, namespaces have names)
+  The reason the program needs access to the std namespace is because every name created by the iostream file is part of that namespace. In order for a program to use the entities in iostream, it must have access to the std namespace.
+
+
+int main()
+  This marks the beginning of a function. A function is a group of one or more programming statements that collectively has a name. The set of parentheses that follows the name indicate that it is a function. The world int stands for "integer". It indicates that the function sends an integer value back to the operating system when it is finished executing.
+  Every C++ program must have a function called main. It is the starting point of the program.
+
+
+cout << "Programming is great fun!";
+  This line displays a message on the screen, "Programming is great fun!" is printed without the quotation marks. 
+  In programming terms, the group of characters inside the quotation marks is called a STRING LITERAL or STRING CONSTANT.
+  A semicolon marks the end of a complete statement in C++. Comments are ignored by the compiler, so the semicolon isn't required at the end of a comment.
+  PREPROCESSOR DIRECTIVES, LIKE #INCLUDE STATEMENTS, SIMPLY END AT THE END OF THE LINE AND NEVER REQUIRE SEMICOLONS.
+
+
+retrun 0;
+  This sends the integer value 0 back to the operating system upon program's completion. The value 0 usually indicates that the program executed successfully.
+
+
+Special characters
+//  Double slash                    Marks the beginning of a comment
+#   Pound sign                      Marks the beginning of a preprocessor directive
+<>  Opening and closing brackets    Encloses a filename when used with the #include directive
+()  Opening and closing parenthesis Used in naming a function, as in int main()
+{}  Opening and closing braces      Encloses a group of statements, such as the contents of a function
+" " Opening and closing quoatation  Encloses a string of characters, such as a message that is to be printed on the screen
+:   Semicolon                       Marks the end of a complete programming statement
