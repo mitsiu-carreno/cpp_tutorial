@@ -29,4 +29,11 @@ Every time cout encounters an endl STREAM MANIPULATOR it advances the output to 
   cout << "My pets are" << endl << "dog";
   cout << endl << "cat " << " bird" << endl;
 
-Another way to cause cout to go to a new line is to insert an ESCAPE SEQUENCE
+Another way to cause cout to go to a new line is to insert an ESCAPE SEQUENCE in the string itself. An SCAPE SEQUENCE starts with the backslash caracter (\) and is followed by one or more control characters. It allows you to control the way output is displayed by embedding commands within the string itself
+
+  cout << "The following items were top sellers\n";
+  cout << "during the month of June:\n";
+  cout << "Computer games\nCoffe";
+  cout << "\nAspirin\n";
+
+
