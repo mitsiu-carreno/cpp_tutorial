@@ -1,0 +1,27 @@
+The #include directive
+The #include directive CAUSES THE CONTENTS OF ANOTHER FILE TO BE INSERTED INTO THE PROGRAM
+
+  #include <iostream>
+
+The header file iostream must be included in any program that uses the cout object. This is because cout is not part of the "core" of the C++ language. Especifically, it is part of the INPUT-OUTPUT STREAM LIBRARY. The header fiel iostream contains information describing iostream objects. Without it, the compiler will not know how to properly compile a program that uses cout.
+
+PREPROCESSOR DIRECTIVES ARE NOT C++ STATEMENTS. They are commands to the preprocessor, which runs prior to the compiler (hence the name "preprocessor")
+
+Any program that uses the cout object must contain the extensive setup information found in iostream. The programmer could type all this information into the program, but it would be too time consuming. An alternative would be to use an editor to "cut and paste" the information into the program, but that would quickly become tiring as well. The solution is to let the preprocessor insert the contents of iostream automatically.
+
+DO NOT PUT SEMICOLONS AT THE END OF PREPROCESSOR DIRECTIVES. Because preprocessor directives are not C++ statements, they do not require semicolons. 
+
+An #include directive must always contain the name of a file. The preprocessor inserts the entire contents of the file into the program at the point it encounters the #include directive. The COMPILER DOESN'T ACUTALLY SEE THE #INCLUDE DIRECTIVE. Instead it sees the code that was inserted by the preprocessor, just as if the programmer had typed it there.
+
+// The Works of Wolfgang
+#include <iostream>
+using namespace std;
+
+int main(){
+  cout << "The works of Wolfgang\ninclude the following";
+  cout << "\nThe Turkish March" << endl;
+  cout << "and Symphony No. 40 ";
+  cout << "in G minor." << endl; 
+  retunr 0;
+}
+

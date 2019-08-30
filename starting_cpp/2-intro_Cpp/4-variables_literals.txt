@@ -1,0 +1,51 @@
+Variables and Literals
+Variables represent storage locations in the computer's memory. Literals are constants 
+
+VARIABLES ALLOW YOU TO STORE AND WORK WITH DATA IN THE COMPUTER'S MEMORY. THEY PROVIDE AN "INTERFACE" TO RAM. 
+
+Part of the job of programming is to determine how many variables a program will need and what type of information they will hold.
+
+  int number;
+
+  This is called a VARIABLE DEFINITION. It tells the compiler the variable's name is number. The word int stands for integer, so number will only be used to hold integer numbers. 
+
+// This program has a variable
+#include <iostream>
+using namespace std;
+
+int main(){
+  int number;
+  
+  number = 5;
+  cout << "The value in number is " << number << endl;
+  return 0;
+}
+
+  number = 5;
+
+  This is called an ASSIGNMENT. The equal sign is an operator that copies the value on its right into the variable name on its left (number). After this line executes, number will be set to 5.
+
+  cout <<  "The value in number is " << number << endl;
+
+  When you send a variable name to cout it prints the variable's content. Notice there are no quotation marks around number.
+
+Sometimes a Number isn't a number
+In fact placing double quotation marks around anything that is not intended to be a string literal will create an error of some type
+
+  number = "5";
+
+  In this line, 5 is no longer an INTEGER, but a STRING LITERAL. Because number was defined as an integer variable, you can only store integers in it. The integer 5 and the string literal "5" are not the same thing.
+
+  Before numbers can be displayed on the screen, they must first be converted to strings (Fortunately cout handles the conversion automatically when you send a number to it)
+
+Literals
+A literal is a piece of data that is written directly into a program's code. One of the most common uses of literals is to assign a value to a variable.
+
+  number = 100;
+
+Another common use of literals is to display something on the screen.
+
+  cout << "Welcome to my program." << endl;
+
+LITERALS ARE ALSO CALLED CONSTANTS
+
