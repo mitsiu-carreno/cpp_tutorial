@@ -1,0 +1,79 @@
+Integer data types
+There are many different types of data. Variables are classified according to their data type, which determines the kind of information that may be stored in them. Integer variables can only hold whole numbers
+
+There are many different types of data. In the realm of numeric information, for example there are whole numbers and fractional numbers, negative and positive numbers, there are textual information (names, addresses, etc)
+When you write a program you must determine what types of information it will likely encounter.
+
+Although C++ offers many data types, in the very broadest sense there are only two: numeric and character. 
+Numeric can also be broken into two additional categories: integer and floating point. Additionally the integer and floating point data types are broken into even more clasifications
+
+Your primary considerations for selecting a numeric data type are:
+-The largest and smallest numbers that may be stored in the variable
+-How much memory the variable uses
+-Whether the variable stores signed or unsigned numbers
+-The number of decimal places of precision the variable has
+
+short int               short               2 bytes   -32,768 to +32,767
+unsigned short int      unsigned short      2 bytes   0 to +65,535
+int                                         4 bytes   -2,147,483,648 to +2,147,483,647
+unsigned int            unsigned            4 bytes   0 to 4,294,967,295
+long int                long                4 bytes   -2,147,483,648 to +2,147,483,647
+unsigned long int       unsigned long       4 bytes   0 to 4,294,967,295
+long long int           long long           8 bytes   -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+unsigned long long int  unsigned long long  8 bytes   0 to 18,446,744,073,709,551,615    
+
+*THE SIZE OF INTEGERS IS DEPENDENT ON THE TYPE OF SYSTEM YOU ARE USING here are the only garantees
+--Integers are at least as big as short integers
+--Long integers are at least as big as integers
+--Unsigned integers are the same size as integers
+--Unsigned long integers are the same size as long integers
+--The long long int and the unsigned long long int data types are guaranteed to be at least 8 bytes (64 bits) in size
+
+Unsigned data types can only store nonnegative values (ages, weights) They can be used when you know your program will not encounter negative values.
+
+// This program has variables of several of the integer types
+#include <iostream>
+using namespace std;
+
+int main(){
+  int checking;
+  unsigned int miles;
+  long days;
+  
+  checking = -20;
+  miles = 4276;
+  days = 189000;
+  cout << "We have made a long journey of " << miles;
+  cout << " miles.\n";
+  cout << "Our checkiing account balance is " << checking;
+  cout << "\nAbout " << days << " days ago Columbus ";
+  cout << "stood on this spot.\n";
+  return 0;
+}
+
+
+You can define several variables of the same type simply separating their names with commas
+
+  int length, width;
+
+INTEGER AND LONG INTEGER LITERALS
+
+In C++, if a numeric literal is an integer (not written with a decimal point) and it fits within the range of an int, then the numeric literal is treated as an int.A numeric literal that is treated as an int is called an INTEGER LITERAL
+
+  floors = 15;
+  rooms = 300;
+  suites = 30;
+
+Each of these statements assigns an integer literal to a variable
+
+If you are in a situation where you have an INTEGER LITERAL, but you need it to be stored in memory as a long integer, C++ ALLOWS YOU TO FORCE AN INTEGER LITERAL TO BE STORED AS A LONG INTEGER BY PLACING THE LETTER "L" AT THE END OF THE NUMBER
+
+  long amount;
+  amount = 32L;
+
+IF YOU WANT AN INTEGER LITERAL TO BE TREATED AS A LONG LONG INT, YOU CAN APPEND "LL" at the end of the number
+
+  long long amount;
+  amount = 32LL;
+
+

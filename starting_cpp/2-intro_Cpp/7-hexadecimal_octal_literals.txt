@@ -1,0 +1,13 @@
+Hexadecimal and Octal literals
+Programmers commonly express values in numbering systems other than decimal (or base 10). Hexadecimal (base 16) and octal (base 8) are popular because they make certain programming tasks more convenient than decimal numbers do.
+
+By default C++ assumes that all integer literals are expressed in decimal. 
+
+YOU EXPRESS HEXADECIMAL NUMBERS BY PLACING 0x IN FRONT OF THEM.
+
+  0xF4
+
+OCTAL NUMBERS MUST BE PRECEDED BY A 0
+  
+  031
+

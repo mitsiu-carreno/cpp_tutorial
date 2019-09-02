@@ -22,3 +22,9 @@ Variable names are examples of identifiers, you may choose your own variable nam
 * compl     float         or_eq       thread_local                *
 *******************************************************************
 
+Legal identifiers
+Here are some specific rules that must be followed with all identifiers:
+-The first character must be one fo the letters "a" through "z" or "A" through "Z", or an underscore character (_)
+-After the first character you may use the letters "a" through "z" or "A" through "Z", the digits 0 through 9, or underscores
+-Uppercase and lowercase characters are distinct. This means ItemsOrdered is not the same as itemsordered
+
