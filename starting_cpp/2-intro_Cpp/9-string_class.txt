@@ -1,0 +1,40 @@
+The C++ string class
+Standard C++ provides a special data type for storing and working with strings
+
+Because a char variable can store only one character in its memory location, ANOTHER DATA TYPE IS NEEDED FOR A VARIABLE ABLE TO HOLD AN ENTIRE STRING. 
+Although C++ does not have a built-in data type able to do this, standard C++ provides something called the STRING CLASS that allows the programmer to create a string type variable 
+
+
+USING THE STRING CLASS
+The first step in using the string class is to #include the "string" header file
+  
+  #include <string>
+
+The next step is to define a STRING TYPE variable, called a STRING OBJECT. 
+Defining a STRING OBJECT is similar to defining a variable of a primitive type
+
+  string movieTitle;
+
+You can assign a STRING LITERAL to movieTitle with the assignment opeartor
+
+  movieTitle = "Wheels of Fury";
+
+You can use cout to display the value of the movieTitle object
+
+  cout << "My favorite movie is " << movieTitle << endl;
+
+
+// This program demostrates the string class
+#include <iostream>
+#incluse <string>   // Required for the string class
+using namespace std;
+
+int main(){
+  string movieTitle;
+
+  movieTitle = "Wheels of Fury";
+  cout << "My favorite movie is " << movieTitle << endl;
+  return 0;
+}
+
+

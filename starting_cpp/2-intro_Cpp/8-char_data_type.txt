@@ -1,2 +1,91 @@
 Char data type
+The char data type is used to store individual characters. A variable of the char data type can hold only one character at a time.
 
+In C++ CHARACTER LITERALS are enclosed in single quotation marks
+
+  char letter = 'g';
+
+  You can not assign a string to a char variable, even if the string contains only one character
+
+  char letter = "g";  // ERROR cannot assign a string to a char
+
+It is important that you do not confuse character literals, which are enclosed in single quotation marks, with string literals, which are enclosed in double quotation marks
+
+ALTHOUGH THE CHAR DATA TYPE IS USED FOR STORING CHARACTERS, IT IS ACTUALLY AN INTEGER DATA TYPE THAT TYPICALLY USES 1 BYTE OF MEMORY
+The reason an integer data type is used to store characters is because CHARACTERS ARE INTERNALLY REPRESENTED BY NUMBERS. Each printable character, as well as many nonprintable characters, is assigned a unique number. 
+The most commonly used method for encoding characters is ASCII, (American Standard Code for Information Interchange) (There are others like EBCDIC -> IBM mainframes)
+
+WHEN A CHARACTER IS STORED IN MEMORY, IT IS ACTUALLY THE NUMERIC CODE THAT IS STORED.
+
+// This program demostrates the close relationship between
+// characters and integers.
+#include <iostream>
+using namespace std;
+
+int main(){
+  char letter;
+  
+  letter = 65;
+  cout << letter << endl;   // A
+  letter = 66;
+  cout << letter << endl;   // B
+  return 0;
+}
+
+THE DIFFERENCE BETWEEN STRING LITERALS AND CHARACTER LITERALS
+It is important that you do not confuse CHARACTER LITERALS with STRING LITERALS.
+
+String, WHICH ARE A SERIES OF CHARACTERS STORED IN CONSECUTIVE MEMORY LOCATIONS, can be virtually any length.
+This means that there must be some way for the program to know how long a string is. In C++ an extra byte, the number 0 is stored. It is called the NULL TERMINATOR or NULL CHARACTER, and it marks the end of the string
+
+    ***************************************************
+    * S ** e ** b ** a ** s ** t ** i ** a ** n ** \0 *
+    ***************************************************
+
+Notice the quotation marks are not stored with the string. They are simply a way of marking the beginning and end of the string in your source code.
+Notice the very last byte of the string, it contains the NULL TERMINATOR, which is represented by the \0 character. 
+The addition of this last byte means that ALTHOUGH THE STRING "Sebastian" IS 9 CHARACTERS LONG, IT OCCUPIES 10 BYTES OF MEMORY.
+
+Now let's compare the way a string and a char are stored. Suppose that you have the literals 'A' and "A" in a program
+
+                      *****
+    'A' is stored as  * A *
+                      *****
+
+                      ***********
+    "A" is stored as  * A ** \0 *
+                      ***********
+
+As you can see 'A' is a 1-byte element and "A" is a 2-byte element. Since characters are really stored as ASCII
+
+                      ******
+    'A' is stored as  * 65 *
+                      ******
+
+                      ************
+    "A" is stored as  * 65 ** \0 *
+                      ************
+Some strings look like a single characters but really arent ("A"). It is also possible to have a character that looks like a string. A good example is the newline character \n. Although it is represented by two characters, a slasj and an n, it is internally represented as one character. In fact, ALL SCAPE SEQUENCES INTERNALLY, ARE JUST 1 BYTE.
+
+// This program uses characters literals
+#include <iostream>
+using namespace std;
+
+int main(){
+  char letter;
+
+  letter = 'A';
+  cout << letter << '\n';
+  letter = 'B';
+  cout << letter << '\n';
+  return 0;
+}
+
+Let's review some IMPORTANT points regarding characters and strings:
+-Printable characters are internally represented by numeric codes. Most computers use ASCII codes for this purpose.
+-Characters normally occupy a single byte of memory
+-Strings are consecutive sequences of characters that occupy consecutive bytes of memory
+-String literals are always stored in memory with a NULL TERMINATOR at the end. This marks the end of the string
+-Character literals are enclosed in single quotation marks
+-String literals are enclosed in double quotation marks
+-Escape sequences such as '\n' are stored internally as a single character
