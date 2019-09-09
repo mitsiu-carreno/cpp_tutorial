@@ -35,3 +35,63 @@ You will notice THERE ARE NO UNSIGNED FLOAT POINT DATA TYPES. On all machines, v
 
 FLOATING PONT LITERALS
 Floating point literals may be expressed in a variety of ways.
+E notation is one method, useful when writting numbers that are extremely large or extremely small.
+E notation numbers may be expressed with an uppercase E or a lowercase e.
+
+// This program uses floating point data types.
+#include <iostream>
+using namespace std;
+
+int main(){
+  float distance;
+  double mass;
+
+  distance = 1.495979E11;
+  mass = 1.989E30;
+
+  cout << "The Sun is " << distance << " meters away.\n";
+  cout << "The Sun\'s mass is " << mass <<  " kilograms.\n";
+  return 0;
+}
+
+You can also express floating-point literals in decimal notation. The literal 1.495979E11 could have been written as
+  149597900000.00
+
+All of the following floating-point literals are equivalent:
+  1.4959E11
+  1.4959e11
+  1.4959E+11
+  1.4959e+11
+  149590000000.00
+
+FLOATING-POINT LITERALS ARE NORMAILLY STORED IN MEMORY AS DOUBLES. But, C++ provides tools for handling just about any situation.
+
+In case you need to force a literal to be stored as a "float", you can append the letter "F" or "f" to the end of it. 
+
+  1.2F
+  45.90f
+
+If you want to force a value to be stored as a long double, apend an "L" or "l" to it
+
+  1034.56L
+  89.21l
+
+The compiler won't confuse these with LONG INTEGERS because THEY HAVE DECIMAL POINTS.
+
+Assigning Floating-point values to integer variables
+When a floating-point value is assigned to an integer variable, THE FRACTIONAL PART OF THE VALUE IS DISCARDED
+
+  int number;
+  number = 7.5;   // Assign 7 to number
+
+Assigning a floating-point variable to an integer variable has the same effect
+
+  int i;
+  float f;
+  f = 7.5;
+  i = f;  // Assigns 7 to i
+
+Note when a floating-point value is truncated it is not rounded
+Warning Floating-point variables can hold a much larger range of values than integer variables can. If a floating-point value is being stored in an integer variable, and the whole part of the value is too large for the integer variable, an INVALID VALUE will be stored in the integer variable.
+
+

@@ -1,0 +1,10 @@
+Determining the size of a data type
+
+The sizeof operator may be used to determine the size of a data type on any system
+
+One of the problems of portability is the lack of common sizes of data types on all machines. 
+A special operator called "sizeof" will report the number of byes of memory used by any data type or variable.
+
+  cout << "The size of an integer is " << sizeof(int);
+
+

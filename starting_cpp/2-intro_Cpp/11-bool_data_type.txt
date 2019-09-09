@@ -1,0 +1,23 @@
+The bool data type
+Boolean variables are set to either true or false
+
+Expressions that have a true or false value are called Boolean expressions, named in honor of English mathematician George Boole (1815-1864)
+
+The bool data type allows you to create small integer variables that are suitabe for holding true or false values 
+
+// This program demostrates boolean variables
+#include <iostream>
+using namespace std;
+
+int main(){
+  bool boolValue;
+  cout << boolValue << endl;  // 1
+  boolValue = false;
+  cout << boolValue << endl;  // 0
+
+  return 0;
+}
+
+As you can see, the value true is represented in memory by the number 1, and false is represented by 0. 
+
+
