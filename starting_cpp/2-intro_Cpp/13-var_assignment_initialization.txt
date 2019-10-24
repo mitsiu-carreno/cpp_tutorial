@@ -1,2 +1,31 @@
 Variable assignments and initialization
+An assignmente operation assigns, or copies a value into a variable
+When a value is assigned to a variable as part of the variable's definition, it is called an INITIALIZATION
+
+The = symbol is called the ASSIGNMENT OPERATOR. Operators perform operations on data.
+The data that OPERATORS work with are called OPERANDS. The assignment operator has two operands
+
+In an assignmente statement, C++ requires the name of the variable receiving the assignment to appear on the left side of the operator. 
+In C++ the operand on the left side of the = symbol must be an "lvalue" (It is called an lvalue because it is a value that may appear on the left side of an assignment operator).
+
+An "lvalue" is something that identifies a place in memory whose contents may be changed.
+
+The operand on the right side of the = symbol must be an "rvalue". An rvalue is any expression that has a value. 
+
+The assignment statement takes the value of the rvalue and puts it in the memory location of the object identified by the lvalue.
+
+  // This program shows variable intialization
+  #include <iostream>
+  using namespace std;
+
+  int main(){
+    int month = 2, days = 28; // Initialization
+
+    cout << "Month " << month << " has " << days << " days.\n";
+    return 0;
+  }
+
+C++ allows you to define several variables and only initialize some of them
+
+  int flightNum = 89, travelTime, departure = 10, distance;
 
