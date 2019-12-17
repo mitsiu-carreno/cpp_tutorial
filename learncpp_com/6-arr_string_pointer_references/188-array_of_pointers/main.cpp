@@ -3,8 +3,9 @@ int main(){
   
   int **array = new int*[10]; // Allocate an array of 10 int pointers
 
-  // Standard dynamically allocated array 
-  // int *array = new int[length];
+  // Works like a standard dynamically allocated array, except the array elements are of type "pointer to integer"
   
+  delete[] array;
+
   return 0;
 }
