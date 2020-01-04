@@ -47,7 +47,10 @@ int main(){
 
   // This solution is probably the best combination of technical correctness and readability
   
-  // 
+  // In all implementations of std::array, "size_type" is an alias for "std::size_t", so it's somewhat common 
+  // to see developers use std::size_t instead for brevity
+
+  for()
 
   return 0;
-}
+
