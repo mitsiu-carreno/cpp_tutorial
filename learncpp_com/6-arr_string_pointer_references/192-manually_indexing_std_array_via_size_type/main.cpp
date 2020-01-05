@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 
+
 int main(){
   
   std::array<int, 5> myArray {1,2,3,4,5};
@@ -50,7 +51,17 @@ int main(){
   // In all implementations of std::array, "size_type" is an alias for "std::size_t", so it's somewhat common 
   // to see developers use std::size_t instead for brevity
 
-  for()
+  for(std::size_t i{0}; i < myArray.size(); ++i){
+    std::cout << myArray[i] << ' ';
+  }
+  std::cout << std::endl;
+
+  // A better solution is to avoid manual indexing of std::array in the first place.
+  // Instead, use range-based for-loops (or iterators) if possible
+  for(auto i : myArray){
+    std::cout << i << ' ';
+  }
+  std::cout << std::endl;
 
   return 0;
-
+}
