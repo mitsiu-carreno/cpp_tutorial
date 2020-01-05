@@ -58,10 +58,30 @@ int main(){
 
   // A better solution is to avoid manual indexing of std::array in the first place.
   // Instead, use range-based for-loops (or iterators) if possible
-  for(auto i : myArray){
-    std::cout << i << ' ';
+
+  
+
+  /* To reverse for-loop an array
+   * 
+   * for(auto i { myArray.size() -1 }; i >= 0; --i){
+   *  std::cout << myArray[i] << ' ';
+   * }
+   * std::cout << std::endl;
+   *
+   * This is an infinite loop, producing undefined behavior once i wraps around
+   * The two issues here.
+   * If myArray.size() returns 0, myArray.size() -1 wraps around.
+   * The other issue, no matter how many elements there are, i >= 0 is always true, beecause unsigned integers cannot be less than 0
+   *
+  */ 
+
+  // A working reverse for-loop for unsigned integers takes an odd shape:
+  for(auto i {myArray.size() }; i-- > 0; ){
+    std::cout << myArray[i] << ' ';
   }
   std::cout << std::endl;
+
+
 
   return 0;
 }
