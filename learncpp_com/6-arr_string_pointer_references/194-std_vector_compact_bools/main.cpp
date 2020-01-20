@@ -11,7 +11,7 @@ int main(){
 
   std::cout << "The length is: " << myVec.size() << '\n';
 
-  std::cout << "The space in memory is: " << sizeof(myVec) << ' ' << sizeof(int) << '\n';
+  std::cout << "The space in memory is: " << sizeof(myVec) << '\n';
 
   for(auto const &elem : myVec){
     std::cout << elem << ' ';
