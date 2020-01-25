@@ -30,8 +30,16 @@ int getNumStudents(){
   }
 }
 
-void fillStudents(std::vector studentRegistry){
-
+void fillStudents(std::vector<Student> &studentRegistry){
+  int i {0};
+  for(Student student : studentRegistry){
+    i++;
+    std::cout << "Llenemos la información del estudiante " << i << std::endl;
+    std::cout << "¿Nombre?: ";
+  
+    std::cout << "¿Calificación? (0-100): ";
+    student.grade = getInteger()
+  }  
 }
 
 int main(){
