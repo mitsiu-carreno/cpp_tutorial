@@ -86,15 +86,21 @@ void sortByGrade(std::vector<Student> &studentRegistry){
   int registrySize = studentRegistry.size();
 
   for(int superi {0}; superi < registrySize; ++superi){
-  int bubbleCurrentMax {0}; 
+  int bubbleCurrentMax {0};
+  bool earlyStop {true}; 
     for(int i {registrySize-1}; i >= 0; --i){
       if(bubbleCurrentMax < studentRegistry.at(i).grade){
         bubbleCurrentMax = studentRegistry.at(i).grade;
       }else{
+        earlyStop = false;
         Student temp = studentRegistry.at(i);
         studentRegistry.at(i) = studentRegistry.at(i+1);
         studentRegistry.at(i+1) = temp;
       }
+    }
+    if(earlyStop && (superi != registrySize-1)){
+      std::cout << "sorting and early stop candidate, please double check sort\n";
+      return;
     }
   }
 }
