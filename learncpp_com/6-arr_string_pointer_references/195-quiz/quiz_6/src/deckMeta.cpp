@@ -1,0 +1,1 @@
+int DECK_LENGTH = 52;

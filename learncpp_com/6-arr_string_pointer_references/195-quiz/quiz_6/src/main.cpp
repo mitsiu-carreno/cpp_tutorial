@@ -26,9 +26,9 @@ g) Write a function named getCardValue() that returns the value of a Card (e.g. 
 */
 
 #include <iostream>
-#include <array>
+#include <vector>
 
-#include <deckInfo.hpp>
+#include <deckMeta.hpp>
 
 enum class CardRanks{
   ACE,
@@ -126,8 +126,11 @@ void printCard(const Card &card){
   std::cout << std::endl;
 };
 
-std::array<Card, DECK_LENGTH> createDeck(){
-  std::array<Card, DECK_LENGTH> deck {};
+std::vector<Card> createDeck(){
+  std::vector<Card> deck {};
+
+  deck.resize(DECK_LENGTH);
+
   int deckIndex = 0;
   for(int i {0}; i < static_cast<int>(CardSuits::MAX_SUITS); ++i){
     for(int j {0}; j < static_cast<int>(CardRanks::MAX_RANKS); ++j){
@@ -139,7 +142,7 @@ std::array<Card, DECK_LENGTH> createDeck(){
   return deck;
 }
 
-void printDeck(std::array<Card, DECK_LENGTH> &deck){
+void printDeck(std::vector<Card> &deck){
   for (const Card &card : deck){
     printCard(card);
   }
