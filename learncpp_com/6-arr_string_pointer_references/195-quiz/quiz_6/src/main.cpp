@@ -28,77 +28,53 @@ g) Write a function named getCardValue() that returns the value of a Card (e.g. 
 #include <iostream>
 #include <vector>
 
-#include <deckMeta.hpp>
-
-enum class CardRanks{
-  ACE,
-  RANK_2,
-  RANK_3,
-  RANK_4, 
-  RANK_5, 
-  RANK_6, 
-  RANK_7, 
-  RANK_8, 
-  RANK_9, 
-  RANK_10, 
-  JACK,
-  QUEEN,
-  KING, 
-  MAX_RANKS,
-};
-
-enum class CardSuits{
-  CLUBS,
-  DIAMONDS,
-  HEARTS,
-  SPADES,
-  MAX_SUITS,
-};
+#include <constants.hpp>
+#include <cardTypes.hpp>
 
 struct Card{
-  CardRanks rank {};
-  CardSuits suit {};
+  cardTypes::CardRanks rank {};
+  cardTypes::CardSuits suit {};
 };
 
 void printCard(const Card &card){
   switch(card.rank){
-    case CardRanks::RANK_2:
+    case cardTypes::CardRanks::RANK_2:
       std::cout << '2';
       break;
-    case CardRanks::RANK_3:
+    case cardTypes::CardRanks::RANK_3:
       std::cout << '3';
       break;
-    case CardRanks::RANK_4:
+    case cardTypes::CardRanks::RANK_4:
       std::cout << '4';
       break;
-    case CardRanks::RANK_5:
+    case cardTypes::CardRanks::RANK_5:
       std::cout << '5';
       break;
-    case CardRanks::RANK_6:
+    case cardTypes::CardRanks::RANK_6:
       std::cout << '6';
       break;
-    case CardRanks::RANK_7:
+    case cardTypes::CardRanks::RANK_7:
       std::cout << '7';
       break;
-    case CardRanks::RANK_8:
+    case cardTypes::CardRanks::RANK_8:
       std::cout << '8';
       break;
-    case CardRanks::RANK_9:
+    case cardTypes::CardRanks::RANK_9:
       std::cout << '9';
       break;
-    case CardRanks::RANK_10:
+    case cardTypes::CardRanks::RANK_10:
       std::cout << "10";
       break;
-    case CardRanks::JACK:
+    case cardTypes::CardRanks::JACK:
       std::cout << 'J';
       break;
-    case CardRanks::QUEEN:
+    case cardTypes::CardRanks::QUEEN:
       std::cout << 'Q';
       break;
-    case CardRanks::KING:
+    case cardTypes::CardRanks::KING:
       std::cout << 'K';
       break;
-    case CardRanks::ACE:
+    case cardTypes::CardRanks::ACE:
       std::cout << 'A';
       break;
     default:
@@ -107,16 +83,16 @@ void printCard(const Card &card){
   }
 
   switch(card.suit){
-    case CardSuits::CLUBS:
+    case cardTypes::CardSuits::CLUBS:
       std::cout << 'C';
       break;
-    case CardSuits::DIAMONDS:
+    case cardTypes::CardSuits::DIAMONDS:
       std::cout << 'D';
       break;
-    case CardSuits::HEARTS:
+    case cardTypes::CardSuits::HEARTS:
       std::cout << 'H';
       break;
-    case CardSuits::SPADES:
+    case cardTypes::CardSuits::SPADES:
       std::cout << 'S';
       break;
     default:
@@ -129,13 +105,13 @@ void printCard(const Card &card){
 std::vector<Card> createDeck(){
   std::vector<Card> deck {};
 
-  deck.resize(DECK_LENGTH);
+  deck.resize(constants::DECK_LENGTH);
 
   int deckIndex = 0;
-  for(int i {0}; i < static_cast<int>(CardSuits::MAX_SUITS); ++i){
-    for(int j {0}; j < static_cast<int>(CardRanks::MAX_RANKS); ++j){
-      deck.at(deckIndex).rank = static_cast<CardRanks>(j);
-      deck.at(deckIndex).suit = static_cast<CardSuits>(i);
+  for(int i {0}; i < static_cast<int>(cardTypes::CardSuits::MAX_SUITS); ++i){
+    for(int j {0}; j < static_cast<int>(cardTypes::CardRanks::MAX_RANKS); ++j){
+      deck.at(deckIndex).rank = static_cast<cardTypes::CardRanks>(j);
+      deck.at(deckIndex).suit = static_cast<cardTypes::CardSuits>(i);
       ++deckIndex;
     }
   } 
