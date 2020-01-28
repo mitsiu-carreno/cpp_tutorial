@@ -31,6 +31,7 @@ g) Write a function named getCardValue() that returns the value of a Card (e.g. 
 #include <constants.hpp>
 #include <cardTypes.hpp>
 #include <printer.hpp>
+#include <shuffler.hpp>
 
 std::vector<cardTypes::Card> createDeck(){
   std::vector<cardTypes::Card> deck {};
@@ -55,6 +56,10 @@ int main(){
 
   printDeck(deck);
 
+  std::cout << "Shuffling deck :)\n\n";
+  shuffleDeck(deck);
+
+  printDeck(deck);
 
   return 0;
 }
