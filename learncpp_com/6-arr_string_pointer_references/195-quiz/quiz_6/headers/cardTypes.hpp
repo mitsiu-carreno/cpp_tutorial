@@ -2,6 +2,7 @@
 #define CARD_TYPES_H
 
 namespace cardTypes{
+
   enum class CardRanks{
     ACE,
     RANK_2,
@@ -26,6 +27,12 @@ namespace cardTypes{
     SPADES,
     MAX_SUITS,
   };
+
+struct Card{
+  cardTypes::CardRanks rank {};
+  cardTypes::CardSuits suit {};
+};
+
 }
 
 #endif
