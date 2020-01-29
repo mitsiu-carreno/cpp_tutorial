@@ -4,12 +4,13 @@
 #include <cardTypes.hpp>
 #include <vector>
 
-void printDeck(std::vector<cardTypes::Card> &deck);
-/*
 namespace printer{
+
+  void printCard(const cardTypes::Card &card);
+
   void printDeck(std::vector<cardTypes::Card> &deck);
 }
-*/
+
 
 
 #endif

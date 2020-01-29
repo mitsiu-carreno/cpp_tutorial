@@ -28,10 +28,10 @@ namespace cardTypes{
     MAX_SUITS,
   };
 
-struct Card{
-  cardTypes::CardRanks rank {};
-  cardTypes::CardSuits suit {};
-};
+  struct Card{
+    cardTypes::CardRanks rank {};
+    cardTypes::CardSuits suit {};
+  };
 
 }
 

@@ -2,7 +2,9 @@
 #define SHUFFLER_H
 
 
+namespace shuffler{
+  void shuffleDeck(std::vector<cardTypes::Card> &deck);
+}
 
-void shuffleDeck(std::vector<cardTypes::Card> &deck);
 
 #endif
