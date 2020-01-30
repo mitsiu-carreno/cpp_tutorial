@@ -1,50 +1,50 @@
 #include <iostream>
 #include <vector>
 
-#include "cardTypes.hpp"
+#include "card.hpp"
 #include "deck.hpp"
 #include "printer.hpp"
 #include "shuffler.hpp"
 
-int getCardValue(const cardTypes::Card &card){
+int GetCardValue(const card::Card &card){
   switch(card.rank){
-    case cardTypes::CardRanks::RANK_2:
-    case cardTypes::CardRanks::RANK_3:
-    case cardTypes::CardRanks::RANK_4:
-    case cardTypes::CardRanks::RANK_5:
-    case cardTypes::CardRanks::RANK_6:
-    case cardTypes::CardRanks::RANK_7:
-    case cardTypes::CardRanks::RANK_8:
-    case cardTypes::CardRanks::RANK_9:
-    case cardTypes::CardRanks::RANK_10:
+    case card::Ranks::RANK_2:
+    case card::Ranks::RANK_3:
+    case card::Ranks::RANK_4:
+    case card::Ranks::RANK_5:
+    case card::Ranks::RANK_6:
+    case card::Ranks::RANK_7:
+    case card::Ranks::RANK_8:
+    case card::Ranks::RANK_9:
+    case card::Ranks::RANK_10:
       return static_cast<int>(card.rank) + 1;
-    case cardTypes::CardRanks::JACK:
-    case cardTypes::CardRanks::QUEEN:
-    case cardTypes::CardRanks::KING:
+    case card::Ranks::JACK:
+    case card::Ranks::QUEEN:
+    case card::Ranks::KING:
       return 10;
-    case cardTypes::CardRanks::ACE:
+    case card::Ranks::ACE:
       return 11;
     default:
       // Errr probably a joker card which we never intended to create
       std::cout << "What is this card?? -> "; 
-      printer::printCard(card);
+      printer::PrintCard(card);
       return 0;
   }
 } 
 int main(){
  
-  auto deck { deck::createDeck() };
+  auto deck { deck::CreateDeck() };
 
-  printer::printDeck(deck);
+  printer::PrintDeck(deck);
 
   std::cout << "Shuffling deck :)\n\n";
-  shuffler::shuffleDeck(deck);
+  shuffler::ShuffleDeck(deck);
 
-  printer::printDeck(deck);
+  printer::PrintDeck(deck);
 
   for(int i {0}; i < 10; ++i){
-    printer::printCard(deck.at(i));
-    std::cout << "has value " << getCardValue(deck.at(i)) << std::endl;
+    printer::PrintCard(deck.at(i));
+    std::cout << "has value " << GetCardValue(deck.at(i)) << std::endl;
   }
 
   return 0;

@@ -1,16 +1,19 @@
-#ifndef PRINTER_H
-#define PRINTER_H
+#ifndef PRINTER_H_
+#define PRINTER_H_
 
-#include <cardTypes.hpp>
 #include <vector>
+#include "card.hpp"
+
+// Test
+//#include <iostream>
+// endTest
 
 namespace printer{
 
-  void printCard(const cardTypes::Card &card);
+  void PrintCard(const card::Card &card);
 
-  void printDeck(std::vector<cardTypes::Card> &deck);
+  void PrintDeck(std::vector<card::Card> &deck);
 }
 
 
-
-#endif
+#endif  // PRINTER_H_

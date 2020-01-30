@@ -1,10 +1,16 @@
-#ifndef SHUFFLER_H
-#define SHUFFLER_H
+#ifndef SHUFFLER_H_
+#define SHUFFLER_H_
 
+#include <vector>
+#include "card.hpp"
+
+// Test
+//#include "random_generator.hpp"
+// endTest
 
 namespace shuffler{
-  void shuffleDeck(std::vector<cardTypes::Card> &deck);
+  void ShuffleDeck(std::vector<card::Card> &deck);
 }
 
 
-#endif
+#endif  // SHUFFLER_H_

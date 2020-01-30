@@ -1,49 +1,49 @@
 #include <iostream>
 #include <vector>
 
-#include "cardTypes.hpp"
+#include "card.hpp"
 
 namespace printer{
 
-  void printCard(const cardTypes::Card &card){
+  void PrintCard(const card::Card &card){
     switch(card.rank){
-      case cardTypes::CardRanks::RANK_2:
+      case card::Ranks::RANK_2:
         std::cout << '2';
         break;
-      case cardTypes::CardRanks::RANK_3:
+      case card::Ranks::RANK_3:
         std::cout << '3';
         break;
-      case cardTypes::CardRanks::RANK_4:
+      case card::Ranks::RANK_4:
         std::cout << '4';
         break;
-      case cardTypes::CardRanks::RANK_5:
+      case card::Ranks::RANK_5:
         std::cout << '5';
         break;
-      case cardTypes::CardRanks::RANK_6:
+      case card::Ranks::RANK_6:
         std::cout << '6';
         break;
-      case cardTypes::CardRanks::RANK_7:
+      case card::Ranks::RANK_7:
         std::cout << '7';
         break;
-      case cardTypes::CardRanks::RANK_8:
+      case card::Ranks::RANK_8:
         std::cout << '8';
         break;
-      case cardTypes::CardRanks::RANK_9:
+      case card::Ranks::RANK_9:
         std::cout << '9';
         break;
-      case cardTypes::CardRanks::RANK_10:
+      case card::Ranks::RANK_10:
         std::cout << "10";
         break;
-      case cardTypes::CardRanks::JACK:
+      case card::Ranks::JACK:
         std::cout << 'J';
         break;
-      case cardTypes::CardRanks::QUEEN:
+      case card::Ranks::QUEEN:
         std::cout << 'Q';
         break;
-      case cardTypes::CardRanks::KING:
+      case card::Ranks::KING:
         std::cout << 'K';
         break;
-      case cardTypes::CardRanks::ACE:
+      case card::Ranks::ACE:
         std::cout << 'A';
         break;
       default:
@@ -52,16 +52,16 @@ namespace printer{
     }
 
     switch(card.suit){
-      case cardTypes::CardSuits::CLUBS:
+      case card::Suits::CLUBS:
         std::cout << 'C';
         break;
-      case cardTypes::CardSuits::DIAMONDS:
+      case card::Suits::DIAMONDS:
         std::cout << 'D';
         break;
-      case cardTypes::CardSuits::HEARTS:
+      case card::Suits::HEARTS:
         std::cout << 'H';
         break;
-      case cardTypes::CardSuits::SPADES:
+      case card::Suits::SPADES:
         std::cout << 'S';
         break;
       default:
@@ -71,9 +71,9 @@ namespace printer{
     std::cout << std::endl;
   };
 
-  void printDeck(std::vector<cardTypes::Card> &deck){
-    for (const cardTypes::Card &card : deck){
-      printCard(card);
+  void PrintDeck(std::vector<card::Card> &deck){
+    for (const card::Card &card : deck){
+      PrintCard(card);
     }
   }
 }

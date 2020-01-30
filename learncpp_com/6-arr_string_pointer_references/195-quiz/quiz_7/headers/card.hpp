@@ -1,9 +1,9 @@
-#ifndef CARD_TYPES_H
-#define CARD_TYPES_H
+#ifndef CARD_H_
+#define CARD_H_
 
-namespace cardTypes{
+namespace card{
 
-  enum class CardRanks{
+  enum class Ranks{
     ACE,
     RANK_2,
     RANK_3,
@@ -20,7 +20,7 @@ namespace cardTypes{
     MAX_RANKS,
   };
 
-  enum class CardSuits{
+  enum class Suits{
     CLUBS,
     DIAMONDS,
     HEARTS,
@@ -29,11 +29,11 @@ namespace cardTypes{
   };
 
   struct Card{
-    cardTypes::CardRanks rank {};
-    cardTypes::CardSuits suit {};
+    card::Ranks rank {};
+    card::Suits suit {};
   };
 
 }
 
-#endif
+#endif  // CARD_H_
 

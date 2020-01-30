@@ -1,17 +1,17 @@
 #include <vector>
-#include "cardTypes.hpp"
-#include "randomGenerator.hpp"
+#include "card.hpp"
+#include "random_generator.hpp"
 
 
 namespace shuffler {
 
-  void shuffleDeck(std::vector<cardTypes::Card> &deck){
+  void ShuffleDeck(std::vector<card::Card> &deck){
     int deck_len = deck.size();
     for(int i {0}; i<deck_len; ++i){
-      int newPosition = random_generator::gen_random(0, deck_len-1);
-      cardTypes::Card temp = deck.at(i);
-      deck.at(i) = deck.at(newPosition);
-      deck.at(newPosition) = temp;
+      int new_position = randomgenerator::GenRandom(0, deck_len-1);
+      card::Card temp = deck.at(i);
+      deck.at(i) = deck.at(new_position);
+      deck.at(new_position) = temp;
     }  
   }
 }

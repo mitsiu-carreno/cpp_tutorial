@@ -1,22 +1,22 @@
 #include <vector>
 
 #include "constants.hpp"
-#include "cardTypes.hpp"
+#include "card.hpp"
 
 
 namespace deck{
   
-  std::vector<cardTypes::Card> createDeck(){
-    std::vector<cardTypes::Card> deck {};
+  std::vector<card::Card> CreateDeck(){
+    std::vector<card::Card> deck {};
 
-    deck.resize(constants::DECK_LENGTH);
+    deck.resize(constants::kDeckLength);
 
-    int deckIndex = 0;
-    for(int i {0}; i < static_cast<int>(cardTypes::CardSuits::MAX_SUITS); ++i){
-      for(int j {0}; j < static_cast<int>(cardTypes::CardRanks::MAX_RANKS); ++j){
-        deck.at(deckIndex).rank = static_cast<cardTypes::CardRanks>(j);
-        deck.at(deckIndex).suit = static_cast<cardTypes::CardSuits>(i);
-        ++deckIndex;
+    int deck_index = 0;
+    for(int i {0}; i < static_cast<int>(card::Suits::MAX_SUITS); ++i){
+      for(int j {0}; j < static_cast<int>(card::Ranks::MAX_RANKS); ++j){
+        deck.at(deck_index).rank = static_cast<card::Ranks>(j);
+        deck.at(deck_index).suit = static_cast<card::Suits>(i);
+        ++deck_index;
       }
     } 
     return deck;

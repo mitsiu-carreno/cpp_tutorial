@@ -1,9 +1,9 @@
 #include "constants.hpp"
-#include "cardTypes.hpp"
+#include "card.hpp"
 
 
-int calcDeckLength(){  
-  return static_cast<int>(cardTypes::CardRanks::MAX_RANKS) * static_cast<int>(cardTypes::CardSuits::MAX_SUITS);
+int CalcDeckLength(){  
+  return static_cast<int>(card::Ranks::MAX_RANKS) * static_cast<int>(card::Suits::MAX_SUITS);
 }
 
-int constants::DECK_LENGTH { calcDeckLength() };
+int constants::kDeckLength { CalcDeckLength() };
