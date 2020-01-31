@@ -10,48 +10,63 @@ endif
 
 # Project structure
 SRC_DIR 	:= src
-BUILD_DIR := build
-EXEC_DIR	:= bin
+BUILD_TARGET := build
+EXEC_TARGET	:= bin
 
-# Executable details
-EXEC_NAME := blackjack
-EXEC_PATH := $(EXEC_DIR)/$(EXEC_NAME)
+# Executable 
+EXEC_TARGET_NAME := blackjack
+EXEC_FULL_PATH := $(EXEC_TARGET)/$(EXEC_TARGET_NAME)
 
 # Code properties
 SRC_EXT		:= cpp
-SRC_LIST	:= $(shell find $(SRC_DIR) -type f -name *.$(SRC_EXT))
-BUILD_LIST:= $(patsubst $(SRC_DIR)/%,$(BUILD_DIR)/%,$(SRC_LIST:.$(SRC_EXT)=.o))
+# Find all the .cpp files 
+SRC_FULL_PATH_LIST	:= $(shell find $(SRC_DIR) -type f -name *.$(SRC_EXT))
+# Based on SRC_FULL_PATH_LIST create the list of *.o files 
+O_FILE_FULL_PATH_LIST:= $(patsubst $(SRC_DIR)/%,$(BUILD_TARGET)/%,$(SRC_FULL_PATH_LIST:.$(SRC_EXT)=.o))
+# Based on O_FILE_FULL_PATH_LIST remove the *.o file (just leave the directory structure)
+BUILD_DIRECTORY_LIST:=$(foreach O_FILE,$(O_FILE_FULL_PATH_LIST),$(subst $(notdir $(O_FILE)),,$(O_FILE)))
+# Remove the duplicates 
+BUILD_DIRECTORY_LIST := $(sort $(BUILD_DIRECTORY_LIST))
+#BUILD_TEST 		:= $(notdir $(BUILD_LIST))
+#BUILD_TEST2:=$(patsubst %/$(BUILD_TEST),.a,$(BUILD_LIST))
 
-# Headers path
-HEAD_LIST	:= $(shell find headers/**/* \( -name '*.hpp' -o -name '*.h' \) -exec dirname {} \; | sort | uniq)
-INCLUDE_LIST 	:= $(patsubst headers/%,-I headers/%,$(HEAD_LIST))
-########## CHECK THIS LINE! (BUILD_LIST)
-BUILD_TEST 		:= $(shell pwd $(BUILD_LIST))
 
-INCLUDE := -I headers $(INCLUDE_LIST)
+# Find all the directories containing .hpp and .h files
+HEADER_DIRECTORY_LIST	:= $(shell find headers \( -name '*.hpp' -o -name '*.h' \) -exec dirname {} \; | sort | uniq)
+# Prefix -I to all directories containing .hpp and .h files
+INCLUDE_LIST 	:= $(patsubst headers%,-I headers%,$(HEADER_DIRECTORY_LIST))
+
 
 CFLAGS=-c -std=c++1z -Wall -Werror -g
 
-$(EXEC_DIR): $(BUILD_LIST)
-	@mkdir -p $(EXEC_DIR)
+$(EXEC_TARGET): $(O_FILE_FULL_PATH_LIST)
+	@mkdir -p $(EXEC_TARGET)
 	@echo "Linking..."
-	@echo "		$(CC) $^ -o $(EXEC_PATH)"; $(CC) $^ -o $(EXEC_PATH);
+	@echo "		$(CC) $^ -o $(EXEC_FULL_PATH)"; $(CC) $^ -o $(EXEC_FULL_PATH);
 	@echo "Build complete, executing..."
 	@echo ""
-	./$(EXEC_PATH)
+	./$(EXEC_FULL_PATH)
 
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
-	@mkdir -p $(BUILD_TEST)
+$(BUILD_TARGET)/%.o: $(SRC_DIR)/%.$(SRC_EXT)
+	@mkdir -p $(BUILD_DIRECTORY_LIST)
 	@echo "Compiling $<..."
-	@echo "$(CC) $(CFLAGS) $(INCLUDE) $< -o $@"; $(CC) $(CFLAGS) $(INCLUDE) $< -o $@
+	@echo "$(CC) $(CFLAGS) $(INCLUDE_LIST) $< -o $@"; $(CC) $(CFLAGS) $(INCLUDE_LIST) $< -o $@
 
 run:
-	./$(EXEC_PATH)
+	./$(EXEC_FULL_PATH)
+
+debug:
+	@echo "SRC_FULL_PATH_LIST $(SRC_FULL_PATH_LIST)"
+	@echo "O_FILE_FULL_PATH_LIST $(O_FILE_FULL_PATH_LIST)"
+	@echo "BUILD_DIRECTORY_LIST $(BUILD_DIRECTORY_LIST)"
+	@echo ""
+	@echo "HEADER_DIRECTORY_LIST $(HEADER_DIRECTORY_LIST)"
+	@echo "INCLUDE_LIST $(INCLUDE_LIST)"
 
 clean:
-	@echo "Cleaning $(EXEC_PATH) ..."; $(RM) -r $(EXEC_PATH)
+	@echo "Cleaning $(EXEC_FULL_PATH) ..."; $(RM) -r $(EXEC_FULL_PATH)
 
 hardclean:
-	@echo "Cleaning $(EXEC_PATH) and $(BUILD_DIR)/* ..."; $(RM) -r $(BUILD_DIR)/* $(EXEC_PATH)
+	@echo "Cleaning $(EXEC_FULL_PATH) and $(BUILD_TARGET)/* ..."; $(RM) -r $(BUILD_TARGET)/* $(EXEC_FULL_PATH)
 
 .PHONY: clean	
