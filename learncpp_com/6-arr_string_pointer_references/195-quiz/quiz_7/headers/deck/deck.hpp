@@ -12,6 +12,8 @@ namespace deck{
   void ShuffleDeck(std::vector<card::Card> &deck);
 
   void PrintDeck(const std::vector<card::Card> &deck);
+
+  card::Card PopOneCard(std::vector<card::Card> &deck);
 }
 
 #endif  // DECK_H_ 

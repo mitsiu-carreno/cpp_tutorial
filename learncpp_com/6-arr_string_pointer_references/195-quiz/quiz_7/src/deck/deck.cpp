@@ -10,6 +10,9 @@ namespace deck{
   std::vector<card::Card> CreateDeck(){
     std::vector<card::Card> deck {};
 
+    // Avoid reallocating memory as we know the maximum capacity our deck is going to need, from there we will only extract cards 
+    deck.reserve(constants::kDeckLength);
+
     deck.resize(constants::kDeckLength);
 
     int deck_index = 0;
@@ -38,5 +41,11 @@ namespace deck{
     for(const card::Card &card : deck){
       std::cout << card::GetCardRankSuit(card) << std::endl;
     }
+  }
+
+  card::Card PopOneCard(std::vector<card::Card> &deck){
+    card::Card poped_card = deck.back();
+    deck.pop_back();
+    return poped_card;
   }
 }

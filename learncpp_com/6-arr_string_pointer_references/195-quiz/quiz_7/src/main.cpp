@@ -50,11 +50,37 @@ int main(){
   deck::ShuffleDeck(deck);
 
   //deck::PrintDeck(deck);
-  
-  std::cout << "Ready to play";
-  
-  
 
+  //std::cout << "initial size " << deck.size() << std::endl;
+
+  //std::cout << "poped " << card::GetCardRankSuit(deck::PopOneCard(deck)) << std::endl;
+
+  //std::cout << "post poped size " << deck.size() << std::endl;
+  
+  std::cout << "Ready to play\n\n";
+
+  bool play_again = false;
+  do{
+    std::cout << "Set up initial conditions\n";
+
+    while(true){
+     
+      std::cout << "Do you want to play again? (y/n): ";
+      std::string input_play_again;
+      std::cin >> input_play_again;
+      if(input_play_again == "y" || input_play_again == "Y" || input_play_again == "yes" || input_play_again == "YES"){
+        play_again = true; 
+        break;
+      }else if(input_play_again == "n" || input_play_again == "N" || input_play_again == "no" || input_play_again == "NO"){
+        play_again = false;
+        break;
+      }else{
+        std::cout << "Sorry didn't catch your answer\n\n";
+      }
+
+    }
+
+  }while(play_again);
 
   return 0;
 }
