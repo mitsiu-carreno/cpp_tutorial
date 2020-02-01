@@ -5,6 +5,7 @@
 #include "card.hpp"
 #include "game_logic.hpp"
 #include "player.hpp"
+#include "user_experience.hpp"
 
 namespace gamelogic{
   bool AskPlayAgain(){
@@ -47,6 +48,8 @@ namespace gamelogic{
         for(const card::Card &card : player.stored_cards){
           player.points += card::GetCardNumericValue(card);
         }
+
+        userexperience::DrawCards(player.stored_cards);
 
         std::cout << "You have: " << player.points << " shpoints\n\n\n";
          
