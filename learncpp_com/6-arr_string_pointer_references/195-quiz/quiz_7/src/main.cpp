@@ -44,7 +44,8 @@ c) In actual blackjack, if the player and dealer have the same score (and the pl
 int main(){
 
   std::cout << "Unpacking brand new deck" << std::endl; 
-  auto deck { deck::CreateDeck() };
+
+
 
   //deck::PrintDeck(deck);
 
@@ -62,12 +63,14 @@ int main(){
   do{
     
     std::cout << "Set up initial conditions\n";
-
+    
+    player::Player player {};
+    
+    auto deck { deck::CreateDeck() };
     std::cout << "Shuffling deck...\n\n";
     deck::ShuffleDeck(deck);
     
-    gamelogic::PlayerOptions option = player::AskPlayerMovement();
-    std::cout << "Player select: " << static_cast<int>(option) << std::endl;
+    gamelogic::ExecutePlayerTurn(player);
 
     play_again = gamelogic::AskPlayAgain();
 

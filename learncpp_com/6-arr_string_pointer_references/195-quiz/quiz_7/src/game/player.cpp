@@ -1,7 +1,9 @@
 #include <iostream>
 
+#include "card.hpp"
 #include "utils.hpp"
 #include "game_logic.hpp"
+
 
 namespace player {
 
