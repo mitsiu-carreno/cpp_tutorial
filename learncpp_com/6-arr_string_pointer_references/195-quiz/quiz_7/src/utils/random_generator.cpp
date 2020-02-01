@@ -4,7 +4,7 @@
 // Initialize our mersenne twister with a random seed based on the clock
 static std::mt19937 mersenne { static_cast<unsigned int>(std::time(nullptr)) };
 
-namespace randomgenerator{
+namespace utils {
 
   int GenRandom(int min, int max){
     // Create a random number generator that generates uniform numbers between min and max

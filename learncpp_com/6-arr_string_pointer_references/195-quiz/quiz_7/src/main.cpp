@@ -35,8 +35,10 @@ c) In actual blackjack, if the player and dealer have the same score (and the pl
 #include <iostream>
 #include <vector>
 
+#include "game_logic.hpp"
 #include "card.hpp"
 #include "deck.hpp"
+#include "player.hpp"
 
 
 int main(){
@@ -45,9 +47,6 @@ int main(){
   auto deck { deck::CreateDeck() };
 
   //deck::PrintDeck(deck);
-
-  std::cout << "Shuffling deck...\n\n";
-  deck::ShuffleDeck(deck);
 
   //deck::PrintDeck(deck);
 
@@ -61,24 +60,16 @@ int main(){
 
   bool play_again = false;
   do{
+    
     std::cout << "Set up initial conditions\n";
 
-    while(true){
-     
-      std::cout << "Do you want to play again? (y/n): ";
-      std::string input_play_again;
-      std::cin >> input_play_again;
-      if(input_play_again == "y" || input_play_again == "Y" || input_play_again == "yes" || input_play_again == "YES"){
-        play_again = true; 
-        break;
-      }else if(input_play_again == "n" || input_play_again == "N" || input_play_again == "no" || input_play_again == "NO"){
-        play_again = false;
-        break;
-      }else{
-        std::cout << "Sorry didn't catch your answer\n\n";
-      }
+    std::cout << "Shuffling deck...\n\n";
+    deck::ShuffleDeck(deck);
+    
+    gamelogic::PlayerOptions option = player::AskPlayerMovement();
+    std::cout << "Player select: " << static_cast<int>(option) << std::endl;
 
-    }
+    play_again = gamelogic::AskPlayAgain();
 
   }while(play_again);
 

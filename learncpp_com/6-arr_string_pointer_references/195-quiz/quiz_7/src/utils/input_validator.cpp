@@ -1,8 +1,8 @@
 #include <iostream>
 
-namespace inputvalidator{
+namespace utils{
 
-  bool isValidInput(){
+  bool IsInputValid(){
     bool valid = true;
     if(std::cin.fail()){
       valid = false;
