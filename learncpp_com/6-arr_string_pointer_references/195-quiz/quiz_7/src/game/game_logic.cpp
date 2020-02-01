@@ -30,13 +30,15 @@ namespace gamelogic{
 
   void ExecutePlayerTurn(player::Player &player){
     std::cout << "It's your turn, good luck\n";
-    player::PlayerOptions selectedOption = player::AskPlayerMovement();
-    if(selectedOption == player::PlayerOptions::HIT){
-      // hit logic
-    }else{
-      // stand logic
+    while(true){
+    
+      player::PlayerOptions selectedOption = player::AskPlayerMovement();
+      if(selectedOption == player::PlayerOptions::HIT){
+        // hit logic
+      }else{
+        // stand logic
+        break;
+      }
     }
-
   }
-
 }

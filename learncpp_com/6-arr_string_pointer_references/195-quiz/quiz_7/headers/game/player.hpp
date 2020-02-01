@@ -1,3 +1,6 @@
+#ifndef PLAYER_H_
+#define PLAYER_H_
+
 #include <vector>
 #include "card.hpp"
 
@@ -17,3 +20,5 @@ namespace player {
   PlayerOptions AskPlayerMovement();
 
 }
+
+#endif  // PLAYER_H_

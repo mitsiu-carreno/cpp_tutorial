@@ -7,7 +7,7 @@
 
 namespace player {
 
-  gamelogic::PlayerOptions AskPlayerMovement(){
+  player::PlayerOptions AskPlayerMovement(){
     int input;
     while(true){
    
@@ -16,8 +16,8 @@ namespace player {
       std::cout << "2 - Stand ()\n";
       std::cin >> input; 
       if(utils::IsInputValid()){
-        if(input > 0 && input <= static_cast<int>(gamelogic::PlayerOptions::MAX_PLAYER_OPTIONS)){
-          return static_cast<gamelogic::PlayerOptions>(input -1);
+        if(input > 0 && input <= static_cast<int>(player::PlayerOptions::MAX_PLAYER_OPTIONS)){
+          return static_cast<player::PlayerOptions>(input -1);
         }else{
           // Answer out of range
           std::cout << "Haha, I know you want to choose " << input << " - Leave casino, but that's not an option, lets try again\n";
