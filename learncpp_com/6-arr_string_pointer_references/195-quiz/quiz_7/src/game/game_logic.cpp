@@ -48,7 +48,7 @@ namespace gamelogic{
           player.points += card::GetCardNumericValue(card);
         }
 
-        std::cout << "The player has: " << player.points << " shpoints\n";
+        std::cout << "You have: " << player.points << " shpoints\n\n\n";
          
       }else{
         // stand logic
