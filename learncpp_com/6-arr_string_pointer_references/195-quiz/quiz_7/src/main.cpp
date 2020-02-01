@@ -70,7 +70,7 @@ int main(){
     std::cout << "Shuffling deck...\n\n";
     deck::ShuffleDeck(deck);
     
-    gamelogic::ExecutePlayerTurn(player);
+    gamelogic::ExecutePlayerTurn(player, deck);
 
     play_again = gamelogic::AskPlayAgain();
 

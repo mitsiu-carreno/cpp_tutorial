@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include "utils.hpp"
+#include "deck.hpp"
+#include "card.hpp"
 #include "game_logic.hpp"
 #include "player.hpp"
 
@@ -28,13 +30,26 @@ namespace gamelogic{
     }
   }
 
-  void ExecutePlayerTurn(player::Player &player){
+  void ExecutePlayerTurn(player::Player &player, std::vector<card::Card> &deck){
     std::cout << "It's your turn, good luck\n";
     while(true){
     
       player::PlayerOptions selectedOption = player::AskPlayerMovement();
       if(selectedOption == player::PlayerOptions::HIT){
-        // hit logic
+        // Take one card from the deck and give it to the player
+        card::Card new_card = deck::PopOneCard(deck);
+        
+        std::cout << "Your card is: " << card::GetCardRankSuit(new_card) << std::endl;
+
+        player.stored_cards.push_back(new_card);
+        // Update player points
+        player.points = 0;
+        for(const card::Card &card : player.stored_cards){
+          player.points += card::GetCardNumericValue(card);
+        }
+
+        std::cout << "The player has: " << player.points << " shpoints\n";
+         
       }else{
         // stand logic
         break;

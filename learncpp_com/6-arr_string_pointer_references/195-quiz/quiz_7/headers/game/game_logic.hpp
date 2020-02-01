@@ -7,7 +7,7 @@ namespace gamelogic{
 
   bool AskPlayAgain();
 
-  void ExecutePlayerTurn(player::Player &player);
+  void ExecutePlayerTurn(player::Player &player, std::vector<card::Card> &deck);
 
 }
 

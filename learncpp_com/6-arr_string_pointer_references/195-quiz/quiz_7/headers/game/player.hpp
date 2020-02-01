@@ -13,8 +13,8 @@ namespace player {
   };
 
   struct Player{
-    std::vector<card::Card> player_cards;
-    int player_points;  
+    std::vector<card::Card> stored_cards;
+    int points;  
   };
 
   PlayerOptions AskPlayerMovement();
