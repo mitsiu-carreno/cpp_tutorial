@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "constants.hpp"
 #include "utils.hpp"
 #include "deck.hpp"
 #include "card.hpp"
@@ -20,9 +21,10 @@ namespace gamelogic{
         if(input_play_again == "y" || input_play_again == "Y" || input_play_again == "yes" || input_play_again == "YES"){
           return true; 
         }else if(input_play_again == "n" || input_play_again == "N" || input_play_again == "no" || input_play_again == "NO"){
+          std::cout << "Fare well sir, hope you enjoy your time at MIT-Casinos\n\n";
           return false;
         }else{
-          std::cout << "Sir you seem a little drunk, please answer \"y\" (yes) or \"n\" (no)\n";
+          std::cout << "Sir you seem a little drunk, please answer \"y\" (yes) or \"n\" (no)\n\n";
         }
       }else{
         std::cout << "Sorry didn't catch your answer is it a \"y\" (yes) or \"n\" (no)\n\n";
@@ -50,8 +52,13 @@ namespace gamelogic{
         }
 
         userexperience::DrawCards(player.stored_cards);
-
-        std::cout << "You have: " << player.points << " shpoints\n\n\n";
+        
+        if(player.points <= constants::kMaximumPlayerPoints){
+          std::cout << "You have: " << player.points << " shpoints\n\n\n";
+        }else{
+          std::cout << "Oh sir, you busted, you reached " << player.points << " shpoints, sorry\n\n\n";
+          break;
+        }
          
       }else{
         // stand logic

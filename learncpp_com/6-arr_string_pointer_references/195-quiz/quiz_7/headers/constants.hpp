@@ -11,6 +11,8 @@ namespace constants{
   // so instead of just dropping a horrible 52, we make the actual calc at constants.cpp just in case 
   
   extern int kDeckLength;
+
+  int kMaximumPlayerPoints = 21;
 }
 
 

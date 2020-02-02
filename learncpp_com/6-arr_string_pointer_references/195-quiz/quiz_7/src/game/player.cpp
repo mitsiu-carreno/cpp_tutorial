@@ -13,17 +13,18 @@ namespace player {
    
       std::cout << "What do you wanna do next? (1/2)\n";
       std::cout << "1 - Hit (Get another card)\n";
-      std::cout << "2 - Stand ()\n";
-      std::cin >> input; 
+      std::cout << "2 - Stand (Finish turn)\n";
+      std::cin >> input;
+      std::cout << std::endl;   
       if(utils::IsInputValid()){
         if(input > 0 && input <= static_cast<int>(player::PlayerOptions::MAX_PLAYER_OPTIONS)){
           return static_cast<player::PlayerOptions>(input -1);
         }else{
           // Answer out of range
-          std::cout << "Haha, I know you want to choose " << input << " - Leave casino, but that's not an option, lets try again\n";
+          std::cout << "Haha, I know you want to choose " << input << " - Leave casino, but that's not an option, lets try again\n\n";
         }
       }else{
-        std::cout << "Sorry didn't catch your next movement, please type 1 or 2 depending on your choice\n"; 
+        std::cout << "Sorry didn't catch your next movement, please type 1 or 2 depending on your choice\n\n"; 
       }
     }
   }
