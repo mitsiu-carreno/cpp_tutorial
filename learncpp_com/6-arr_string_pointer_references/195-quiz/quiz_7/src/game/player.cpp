@@ -7,6 +7,17 @@
 
 namespace player {
 
+  
+  void UpdatePlayerPoints(player::Player &player){
+    int count {0};
+    for(const card::Card &card : player.stored_cards){
+      // Here will go the logic for 1 or 11
+      // and seems like its going to be a pain in the *ss
+      count += card::GetCardNumericValue(card);
+    }
+    player.points = count;
+  }
+
   player::PlayerOptions AskPlayerMovement(){
     int input;
     while(true){

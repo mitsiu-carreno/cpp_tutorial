@@ -12,7 +12,7 @@ namespace constants{
   
   extern int kDeckLength;
 
-  int kMaximumPlayerPoints = 21;
+  const int kMaximumPlayerPoints = 21;
 }
 
 

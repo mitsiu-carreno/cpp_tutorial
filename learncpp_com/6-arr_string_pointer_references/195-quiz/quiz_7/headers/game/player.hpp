@@ -17,6 +17,8 @@ namespace player {
     int points;  
   };
 
+  void UpdatePlayerPoints(player::Player &player);
+
   PlayerOptions AskPlayerMovement();
 
 }

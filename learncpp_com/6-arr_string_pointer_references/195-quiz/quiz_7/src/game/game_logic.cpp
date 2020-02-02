@@ -33,8 +33,18 @@ namespace gamelogic{
     }
   }
 
+
+
   void ExecutePlayerTurn(player::Player &player, std::vector<card::Card> &deck){
     std::cout << "It's your turn, good luck\n";
+      
+    // By default the player gets two cards
+    player.stored_cards.push_back(deck::PopOneCard(deck));    
+    player.stored_cards.push_back(deck::PopOneCard(deck));    
+    player::UpdatePlayerPoints(player);
+    userexperience::DrawCards(player.stored_cards);
+    // Blackjack logic goes here!
+    
     while(true){
     
       player::PlayerOptions selectedOption = player::AskPlayerMovement();
@@ -46,13 +56,11 @@ namespace gamelogic{
 
         player.stored_cards.push_back(new_card);
         // Update player points
-        player.points = 0;
-        for(const card::Card &card : player.stored_cards){
-          player.points += card::GetCardNumericValue(card);
-        }
+        player::UpdatePlayerPoints(player);
 
         userexperience::DrawCards(player.stored_cards);
         
+        //if(player.points <= constants::kMaximumPlayerPoints){
         if(player.points <= constants::kMaximumPlayerPoints){
           std::cout << "You have: " << player.points << " shpoints\n\n\n";
         }else{
