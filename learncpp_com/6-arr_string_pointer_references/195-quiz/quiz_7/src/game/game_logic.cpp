@@ -110,6 +110,24 @@ namespace gamelogic{
 
   void PublishWinner(player::Player &player, player::Player &dealer){
     
+    // Someone got a blackjack
+    if(
+      (dealer.stored_cards.size() == constants::kCardsForBlackjack && dealer.points == constants::kMaximumPlayerPoints)
+      ||
+      (player.stored_cards.size() == constants::kCardsForBlackjack && player.points == constants::kMaximumPlayerPoints)
+    ){
+      //Check if tie
+      if(player.points  == dealer.points){
+        std::cout << "Uff can you believe both got blackjacks! what are the odds!\n... (0.00036% just in case you wonder)\n\n";
+        return;
+      }else if(player.points == constants::kMaximumPlayerPoints){  // No tie, player got blackjack
+        std::cout << "Contratulations sir, you gon by blackjack!\n\n";
+        return;
+      }else{  // No tie, dealer got blackjack
+        std::cout << "Sorry sir, the house won by blackjack, better luck next time\n\n";
+        return;
+      }
+    }
     
     // Player busted
     if(player.points > constants::kMaximumPlayerPoints){
@@ -118,25 +136,6 @@ namespace gamelogic{
     }else if(dealer.points > constants::kMaximumPlayerPoints){  //dealer busted
       std::cout << "Congratulations sir, you won!\n\n";
       return;
-    }
-
-    // Someone got a blackjack
-    if(
-      (dealer.stored_cards.size() == constants::kCardsForBlackjack && dealer.points == constants::kMaximumPlayerPoints)
-      ||
-      (player.stored_cards.size() == constants::kCardsForBlackjack && player.points == constants::kMaximumPlayerPoints)
-    ){
-      //Check if tie
-      if(player.stored_cards.size() == dealer.stored_cards.size()){
-        std::cout << "Uff can you believe both got blackjacks! what are the odds!\n... (0.00036% just in case you wonder)\n\n";
-        return;
-      }else if(player.stored_cards.size() == constants::kCardsForBlackjack){  // No tie, player got blackjack
-        std::cout << "Contratulations sir, you gon by blackjack!\n\n";
-        return;
-      }else{  // No tie, dealer got blackjack
-        std::cout << "Sorry sir, the house won by blackjack, better luck next time\n\n";
-        return;
-      }
     }
 
     // Decide by points
