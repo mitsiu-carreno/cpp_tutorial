@@ -1,4 +1,4 @@
-/*
+;/*
 a) Alright, challenge time! Let’s write a simplified version of Blackjack. 
 If you’re not already familiar with Blackjack, the Wikipedia article for Blackjack has a summary.
 
@@ -64,13 +64,25 @@ int main(){
     
     std::cout << "Set up initial conditions\n";
     
-    player::Player player {};
+    player::Player player {{},0,player::PlayerTypes::USER};
+    player::Player dealer {{},0,player::PlayerTypes::DEALER};
     
     auto deck { deck::CreateDeck() };
     std::cout << "Shuffling deck...\n\n";
     deck::ShuffleDeck(deck);
     
-    gamelogic::ExecutePlayerTurn(player, deck);
+    gamelogic::ExecuteDealerOpeningTurn(dealer, deck);
+    std::cout << "********************************************\n\n";
+   
+    bool dealer_still_required; 
+    dealer_still_required = gamelogic::ExecutePlayerTurn(player, deck);
+    std::cout << "********************************************\n\n";
+
+    if(dealer_still_required){
+      gamelogic::ExecuteDealerClosingTurn(dealer, deck);
+    }
+
+    gamelogic::PublishWinner(player, dealer);
 
     play_again = gamelogic::AskPlayAgain();
 

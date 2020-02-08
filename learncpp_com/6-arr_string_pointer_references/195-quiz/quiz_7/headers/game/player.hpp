@@ -12,9 +12,16 @@ namespace player {
     MAX_PLAYER_OPTIONS,
   };
 
+  enum class PlayerTypes{
+    USER,
+    DEALER,
+    MAX_PLAYER_TYPES,
+  };
+
   struct Player{
     std::vector<card::Card> stored_cards;
-    int points;  
+    int points;
+    PlayerTypes player_type;
   };
 
   void UpdatePlayerPoints(player::Player &player);

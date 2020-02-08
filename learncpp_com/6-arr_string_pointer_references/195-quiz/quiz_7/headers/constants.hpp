@@ -13,6 +13,10 @@ namespace constants{
   extern int kDeckLength;
 
   const int kMaximumPlayerPoints = 21;
+
+  const int kNecessaryDealerPoints = 17;
+  
+  const int kCardsForBlackjack = 2; // As and a ten
 }
 
 

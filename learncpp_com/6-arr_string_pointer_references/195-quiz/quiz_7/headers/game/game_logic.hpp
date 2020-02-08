@@ -7,7 +7,13 @@ namespace gamelogic{
 
   bool AskPlayAgain();
 
-  void ExecutePlayerTurn(player::Player &player, std::vector<card::Card> &deck);
+  void ExecuteDealerOpeningTurn(player::Player &dealer, std::vector<card::Card> &deck);
+
+  void ExecuteDealerClosingTurn(player::Player &dealer, std::vector<card::Card> &deck);
+
+  bool ExecutePlayerTurn(player::Player &player, std::vector<card::Card> &deck);
+
+  void PublishWinner(player::Player &player, player::Player &dealer);
 
 }
 
