@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "constants.hpp"
 #include "card.hpp"
 #include "utils.hpp"
 #include "game_logic.hpp"
@@ -10,10 +11,23 @@ namespace player {
   
   void UpdatePlayerPoints(player::Player &player){
     int count {0};
+    int ace_found  {0};
+    
     for(const card::Card &card : player.stored_cards){
-      // Here will go the logic for 1 or 11
-      // and seems like its going to be a pain in the *ss
-      count += card::GetCardNumericValue(card);
+      
+      int card_numeric_value = card::GetCardNumericValue(card);
+      // If As card must check if 1 or 11 
+
+      if(card_numeric_value == 11){
+        ++ace_found;
+      }
+
+      count += card_numeric_value;
+    }
+    
+    while(count > constants::kMaximumPlayerPoints && ace_found > 0){
+      count = count - 10;
+      --ace_found;  
     }
     player.points = count;
   }
