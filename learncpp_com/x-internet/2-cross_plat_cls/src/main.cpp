@@ -15,10 +15,10 @@
 
 int main(){
 
-  std::cout << "Hello friend\n";
+  std::cout << "Hello friend... hello friend, that's lame\n";
   ClearScreen();
   
-  std::cout << "hello friend, thats lame\n"; 
+  std::cout << "Maybe i should give you a name, but that's a slippery slope\n"; 
 
   return 0;
 }
