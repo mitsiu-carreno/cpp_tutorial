@@ -53,7 +53,7 @@
   #else 
     // code win 32
   #endif
-#elif __APPLE__
+#elif defined(__APPLE__) || defined(__linux__)
 
   #include <unistd.h>
   #include <term.h>
