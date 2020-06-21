@@ -38,5 +38,32 @@ int main(){
   }
   std::cout << std::endl;
 
+  // Range-based for-loops hide the mechanism for iterating through and yet, they still 
+  // work for all kind of different structures (arrays, lists, trees, maps, etc) 
+  // How do these works? THEY USE ITERATORS
+  
+  // A container may provide different kinds of iterators (a container might offer a 
+  // forward iterator and a reverse iterator, etc)
+  
+
+  // The simplest kind of iterator is a pointer which (using pointer arithmetic) works 
+  // for data sequentially stored
+  std::array data {0,1,2,3,4,5,6,7};
+
+  auto begin {&data[0]};
+  auto end {begin + std::size(data) };  // NOTE that this points to 
+                                        // ONE SPOT BEYOND THE LAST ELEMENT
+  // int *end {&data[std::size(data)]};   UNDEFINED BEHAVIOR trying to access an element that is
+  //                                      of the end of the array 
+  
+
+  // for-loop with pointer
+  for(auto ptr {begin}; ptr != end; ++ptr){ 
+    std::cout << *ptr << " "; // Dereference to get value of current element
+  }
+  std::cout << "\n";
+
+  
+
   return 0;
 }
