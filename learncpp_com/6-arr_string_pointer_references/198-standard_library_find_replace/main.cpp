@@ -11,7 +11,8 @@ int main(){
   // - Facilitators: Used to generate a result based on values of the data members (ej multiply
   //                 values, determine order of a pair of elements)
   
-  
+  // Most of the algorithms do not guarantie a particular order of execution so DO NOT ASSUME ANY ORDER OF EXECUTION
+
   std::array array {117, 413, 16, 343, 5555};
     
   int search {16};
