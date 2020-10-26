@@ -32,6 +32,7 @@ void SetToNull(int *tmp_ptr){
 
 void AddressByReference(int *&tmp_ptr){
   std::cout << *tmp_ptr << "\n";
+  tmp_ptr = nullptr;  // use 0 instead if not C++11
 }
 
 int main(){
@@ -40,11 +41,28 @@ int main(){
   // The function can dereference the pointer to access or change the value being pointed to
   //
   // Pros:
+  // -Passed by address allows a function to change the value of the argument, which is sometimes useful. Otherwise, const can be used
+  // to guarantee the function wont change the argument (However if you want to do this with a non-pointer, you should use 
+  // pass by reference instead)
+  // -Because a copy of the argument is not made, it is fast, even when used with large structs or classes
+  // -We can return multiple values from a function via out parameters
   //
   //
   // Cons:
+  // -Becase literals (excepting C-style string literals) and expressions DO NOT have addresses, pointer arguments must be normal variables
+  // -All values must be checked to see whether they are null. Trying to dereference a null value will result in a crash. It is easy to
+  // forget to do this.
+  // -Because dereferencing a pointer is slower than accessing a value directly, accessing arguments passed by address is slower than 
+  // accessing arguments passed by value
+  //
   // When to use:
+  // -When passing built-in arrays (if you're okay with the fact that they'll decay into pointer)
+  // -When passing a pointer and nullptr is a valid argument logically
+  //
   // When not to use:
+  // -When passing a pointer and nullptr is not a valid argument logically (use pass by reference)
+  // -When passing structs or classes (use pass by reference)
+  // -When passing fundamental types (use pass by value)
 
   int number {5};
   std::cout << "Pre: " << number << "\n";
@@ -83,6 +101,13 @@ int main(){
   // What if we want to change the address an argument points to from within the function?
   // You can simply pass the ADDRESS BY REFERENCE
   AddressByReference(ptr);
+  
+  // now AddressByReference  did indeed change the value of ptr from &five to nullptr
+  
+  // C++ really passes everything by value! The properties of pass by address (and reference) come solely from the fact that we can 
+  // dereference teh passed address to change the argument, which we can NOT do with a normal value parameter
+
+  // Pass by address makes modifiable parameters explicit
   
 
   return 0;
